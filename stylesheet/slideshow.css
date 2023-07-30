@@ -1,0 +1,56 @@
+/* Стили для контейнера слайдшоу */
+
+  
+  /* Стили для отдельных слайдов */
+  .slide {
+    flex: 0 0 100%; /* Каждый слайд занимает всю доступную ширину контейнера */
+    /* width: 100%; */
+    /* height: 100rem; */
+    background-size: cover;
+  }
+  
+  /* Анимация для перехода между слайдами */
+  /* @keyframes slideshowAnimation {
+    0% { margin-left: 0; }
+    33% { margin-left: -100%; }
+    66% { margin-left: -200%; }
+    100% { margin-left: -200%; }
+  }
+   */
+  /* Анимация для перехода между слайдами с продолжительностью 5 секунд */
+  /* .slideshow {
+    animation: slideshowAnimation 15s infinite;
+  } */
+
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
