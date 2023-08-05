@@ -84,7 +84,7 @@ body {
     padding: 0;  
     width: 100%;
     min-height: 100vh; /* Устанавливаем минимальную высоту body равную 100% высоты окна браузера */
-    background-color: #292828;
+    /* background-color: #292828; */
 }
 
 header {
@@ -182,7 +182,7 @@ li{
     display: flex;
     flex-direction: row;
     overflow: hidden; /* Скрываем содержимое, которое не помещается в контейнер */
-    height: 600px;
+    height: 350px;
     flex-wrap: wrap;
     align-content: center;
     background-size: cover;
