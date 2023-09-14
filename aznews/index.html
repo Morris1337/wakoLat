@@ -6,6 +6,9 @@
         <title>News HTML-5 Template </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
         <link rel="manifest" href="site.webmanifest">
 		<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
@@ -14,7 +17,7 @@
             <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
             <link rel="stylesheet" href="assets/css/ticker-style.css">
             <link rel="stylesheet" href="assets/css/flaticon.css">
-            <link rel="stylesheet" href="assets/css/slicknav.css">
+            <link rel="stylesheet" href="assets/css/slicknav.css?<?=filemtime('assets/css/slicknav.css')?>">
             <link rel="stylesheet" href="assets/css/animate.min.css">
             <link rel="stylesheet" href="assets/css/magnific-popup.css">
             <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
@@ -22,7 +25,7 @@
             <link rel="stylesheet" href="assets/css/slick.css">
             <link rel="stylesheet" href="assets/css/nice-select.css">
             <link rel="stylesheet" href="assets/css/style.css">
-            <link rel="stylesheet" href="assets/css/slideshow.css">
+            <link rel="stylesheet" href="assets/css/slideshow.css?<?=filemtime('assets/css/slideshow.css')?>">
         </head>
 
    <body>
@@ -81,17 +84,6 @@
                                             <li><a href="">Federācija</a>
                                                 <ul class="submenu">
                                                 </li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Biedri</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Noteikumi</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Valde</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">LKF izlase</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Tiesneši</a></li>
-                                                <li id="komis" class="li-header-item"><a class="li-header-link" href="">Komisijas</a>
-                                                    <ul class="ul-header-komis">
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Tiesnešu komisija</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Ērikas komisija</a></li>
-                                                    </ul>
-                                                </li>
                                                 <li id="liDoc" class="li-header-item"><a class="li-header-link" href="">Dokumenti</a>
                                                     <ul class="submenu">
                                                         <li class="li-header-item"><a class="li-header-link" href="">Gada pārskati</a></li>
@@ -101,6 +93,17 @@
                                                         <li class="li-header-item"><a class="li-header-link" href="">Sacensību rezultāti</a></li>
                                                         <li class="li-header-item"><a class="li-header-link" href="">Reitings</a></li>
                                                     </ul>
+                                                <li class="li-header-item"><a class="li-header-link" href="">Biedri</a></li>
+                                                <li class="li-header-item"><a class="li-header-link" href="">Noteikumi</a></li>
+                                                <li class="li-header-item"><a class="li-header-link" href="">Valde</a></li>
+                                                <li class="li-header-item"><a class="li-header-link" href="">LKF izlase</a></li>
+                                                <li class="li-header-item"><a class="li-header-link" href="">Tiesneši</a></li>
+                                                <li id="komis" class="li-header-item"><a class="li-header-link" href="">Komisijas</a>
+                                                    <ul class="ul-header-komis submenu">
+                                                        <li class="li-header-item"><a class="li-header-link" href="">Tiesnešu komisija</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="">Ērikas komisija</a></li>
+                                                    </ul>
+                                                </li>
                                             </ul>
                                             </li>
                                             <li><a href="categori.html">kalendārs</a></li>
@@ -108,7 +111,10 @@
                                             <li><a href="latest_news.html">Noteikumi</a></li>
                                             <li><a href="contact.html">Antidopings</a></li>
                                             <li><a href="#">Kontakti</a></li>
+                                            <!-- <button id="closeTab">close</button> -->
                                         </ul>
+                                        <a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_open" style="outline: none;">
+                                        </a>                                    
                                     </nav>
                                 </div>
                             </div>             
@@ -148,15 +154,6 @@
                                     <img class="slide-img" src="assets/img/HeaderImg/Изображение WhatsApp 2023-07-26 в 22.27.54.jpg" alt="photo4">
                                 </div>
                             </div>
-                            <!-- <br>
-                            <a class="prev">❮</a>
-                            <a class="next">❯</a>
-                            <div> -->
-                                <!-- <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                                <span class="dot"></span>
-                            </div> -->
                         </section>
                      </div>
                 </div>
@@ -1120,6 +1117,7 @@
         
         <!-- Header img -->
         <script src="assets/js/slideshow.js"></script>
+        <script src="assets/js/scripts.js"></script>
 
     </body>
 </html>

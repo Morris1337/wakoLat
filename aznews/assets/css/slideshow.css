@@ -87,15 +87,6 @@ body {
     /* background-color: #292828; */
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    position: static;
-    z-index: 1000;
-    /* background-color: transparent; */
-    background-color: #cad8ff;
-    flex-shrink: 0; /* Запрещаем уменьшение высоты элемента при недостаточном пространстве */
-  }
 
 ul{
     background-color: transparent; /* Используйте "transparent" вместо "none" для прозрачного фона */
@@ -158,6 +149,13 @@ li{
     background-color: transparent;
 }
 
+@media (max-width: 767px) {
+  .li-header-item {
+    padding: 0 !important;
+    color: black;
+  }
+}
+
 .li-header-item{
     padding: 1rem 0;
     color: black;
@@ -173,9 +171,7 @@ li{
 /* Section_1 */
 
 .section_1{
-    position: relative;
     width: 100%;
-    z-index: 99;
 }
 
 .slideshow {

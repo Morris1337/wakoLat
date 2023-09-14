@@ -230,24 +230,26 @@
 
 
 /* 6. Nice Selectorp  */
-  var nice_Select = $('select');
+  let nice_Select = $('select');
     if(nice_Select.length){
       nice_Select.niceSelect();
     }
 
 /* 7.  Custom Sticky Menu  */
     $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
-      if (scroll < 245) {
-        $(".header-sticky ").removeClass("sticky-bar");
-      } else {
-        $(".header-sticky").addClass("sticky-bar");
+      if($(window).width() > 768){
+        let scroll = $(window).scrollTop();
+        if (scroll < 245) {
+          $(".header-sticky ").removeClass("sticky-bar");
+        } else {
+          $(".header-sticky").addClass("sticky-bar");
+        }
       }
     });
 
     /*   Show img flex  */
     $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
+      let scroll = $(window).scrollTop();
       if (scroll < 245) {
         $(".header-flex").removeClass("sticky-flex");
       } else {
@@ -256,7 +258,7 @@
     });
 
     $(window).on('scroll', function () {
-      var scroll = $(window).scrollTop();
+      let scroll = $(window).scrollTop();
       if (scroll < 245) {
           $(".header-sticky").removeClass("sticky");
       } else {
