@@ -66,6 +66,12 @@
   .slicknav_nav .slicknav_parent-link a {
     display: inline; }
 
+  @media(max-width: 378px){
+    ..slicknav_nav{
+
+    }
+  }
+
 .slicknav_brand {
   float: left; }
 
@@ -81,6 +87,12 @@
     font-weight: bold; }
   .slicknav_menu .slicknav_icon-bar {
       background-color: #dca73a !important;
+    }
+
+    @media(max-width: 378px){
+      .slicknav_menu{
+        margin-left: -286px;
+      }
     }
 
     .slicknav_btn {

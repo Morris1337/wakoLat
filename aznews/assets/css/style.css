@@ -2586,6 +2586,12 @@ hr {
 	box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.1)
 }
 
+@media(max-width: 378px){
+	.header-area .header-bottom {
+		height: 70px;
+	}
+}
+
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 	.header-area .header-bottom {
 		border-top: 0
@@ -2804,6 +2810,12 @@ hr {
 	right: 17px
 }
 
+@media(max-width: 378px){
+	.header-area .slicknav_btn {
+		top: -38px;
+	}
+}
+
 .slicknav_menu .slicknav_nav a:hover {
 	background: transparent;
 	color: #fc3f00
@@ -2818,7 +2830,8 @@ hr {
 	position: absolute;
 	right: 0px;
 	width: 100%;
-	z-index: 99
+	z-index: 99;
+	width: fit-content;
 }
 
 .header-sticky.sticky-bar.sticky .header-right-btn {
@@ -3730,6 +3743,13 @@ hr {
 	margin-bottom: 40px
 }
 
+@media (max-width: 378px){
+	.footer-area .footer-logo {
+		display: flex;
+		justify-content: center;
+	}
+}
+
 .footer-area .footer-pera p {
 	color: #a8a8a8;
 	font-size: 15px;
@@ -3801,7 +3821,7 @@ hr {
 }
 
 .footer-area .footer-social a i {
-	color: #222222;
+	color: #797979;
 	margin-right: 12px;
 	font-size: 19px;
 	-webkit-transition: all .4s ease-out 0s;

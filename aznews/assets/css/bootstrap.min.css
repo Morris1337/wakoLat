@@ -620,10 +620,32 @@ pre code {
 .row {
     display: -ms-flexbox;
     display: flex;
+    justify-content: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px
+}
+
+.row.go1{
+    justify-content: flex-end;
+}
+
+.LKF-logo{
+    width: 120px;
+    position: absolute;
+}
+
+@media (max-width: 378px){
+    .phone-header{
+        display: flex!important;
+        justify-content: space-between
+    }
+    
+    .LKF-logo{
+        width: 100px;
+        margin-left: 130px;
+    }
 }
 
 .no-gutters {
