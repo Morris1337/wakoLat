@@ -1,6 +1,15 @@
+html{
+    height: 700px;
+}
+
 body{
+    height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+main{
+    height: 300px;
 }
 
 ul{
@@ -20,16 +29,133 @@ button{
     width: 150px;
 }
 
+input{
+    border: solid black 1px;
+    border-radius: 10px;
+    height: 40px;
+    max-width: 100%; /* Устанавливаем максимальную ширину */
+    overflow-x: auto; /* Полоса прокрутки горизонтально */
+}
+
+textarea{
+    width: 100%;
+    min-width: 300px;
+    border: solid black 1px;
+    border-radius: 10px;
+}
+
+
 .conteiner-admin{
+    width: 100%;
+    position: absolute;
     display: flex;
+    z-index: 10;
 }
 
 .admin-menu{
+    width: 400px;
+    min-width: 250px;
+    height: 100vh;
+    background-color: rgb(54, 53, 53);
     border-radius: 3px;
+}
+
+.admin-menu-section{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 300px;
-    background-color: rgb(54, 53, 53);
 }
+
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#form{
+    width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+@media(max-width: 378px){
+    .admin-menu{
+        width: 240px;
+        height: 100vh;
+        background-color: rgb(54, 53, 53);
+        border-radius: 3px;
+    }
+
+    .admin-menu-phone{
+        display: none;
+    }
+
+    .admin-menu-phone.open{
+        display: flex;
+    }
+    
+    .admin-menu-icon-phone-block{
+        height: 100vh;
+        display: flex!important;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .admin-menu-icon{
+        width: 40px;
+        color: rgb(168, 42, 42);
+        background-color: #fff;
+        border: solid #212529 2px;
+        border-radius: 10px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #form{
+        width: 300px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .formContent{
+        display: flex!important;
+        flex-direction: column;
+    }
+}
+
+.admin-menu-icon-phone-block{
+display: none;
+}
+
+.visual{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.text{
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    padding: 10px;
+    resize: none;
+    border: 1px solid #ccc;
+    font-size: 16px; /* Установите размер шрифта по своему усмотрению */
+}
+
+.formContent{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: space-evenly;
+    justify-items: stretch;
+}
+
+#conteiner-form{
+    position: relative;
+    z-index: 5;
+}
+
 
