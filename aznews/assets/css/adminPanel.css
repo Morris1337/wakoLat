@@ -50,6 +50,7 @@ textarea{
     position: absolute;
     display: flex;
     z-index: 10;
+    gap: 170px;
 }
 
 .admin-menu{
@@ -81,6 +82,15 @@ form{
 }
 
 @media(max-width: 378px){
+    input{
+        width: 250px;
+    }
+
+    textarea{
+        min-width: 250px!important;
+        width: 250px!important;
+    }
+
     .admin-menu{
         width: 240px;
         height: 100vh;
@@ -89,33 +99,59 @@ form{
     }
 
     .admin-menu-phone{
-        display: none;
+        display: flex;
+        min-width: 10px;
+        width: 1px;
     }
 
     .admin-menu-phone.open{
+        height: 700px;
+        position: absolute;
+        z-index: 15;
+        width: 212px;
+    }
+
+    .admin-menu-section{
+        display: none;
+    }
+
+    .admin-menu-section.open{
         display: flex;
     }
     
     .admin-menu-icon-phone-block{
-        height: 100vh;
+        position: relative;
+        z-index: 10;
+        width: 28px;
+        background-color: rgb(54, 53, 53);
+        /* background-color: red; */
         display: flex!important;
         justify-content: flex-end;
         align-items: center;
+        border-radius: 42px;
     }
     .admin-menu-icon{
-        width: 40px;
+        height: 700px;
+        width: 27px;
         color: rgb(168, 42, 42);
         background-color: #fff;
         border: solid #212529 2px;
         border-radius: 10px;
     }
 
+    .conteiner-admin{
+        gap: 0;
+    }
+
     form{
         display: flex;
         flex-direction: column;
+        margin-top: 15px;
     }
     
     #form{
+        position: absolute;
+        z-index: 5;
         width: 300px;
         display: flex;
         justify-content: flex-end;
@@ -125,6 +161,34 @@ form{
         display: flex!important;
         flex-direction: column;
     }
+
+    .visual{
+        margin-left: 45px!important;
+    }
+    .triangle {
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent; /* Размер треугольника и цвет границы */
+        border-right: 8px solid transparent;
+        border-bottom: 15px solid white; /* Цвет заливки треугольника */
+        transform: rotate(90deg); /* Поворачивает треугольник на 90 градусов */
+        margin: 5px;
+    }      
+      
+      
+}
+
+.custom-file-upload {
+
+    background-color: #f1f1f1;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+.custom-file{
+    display: none;
 }
 
 .admin-menu-icon-phone-block{
@@ -158,4 +222,17 @@ display: none;
     z-index: 5;
 }
 
+.styles{
+    width: fit-content;
+    height: 25px;
+    padding: 5px;
+    margin: 5px;
+    padding-top: 0px;
+}
+
+.stylesConteinter{
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
 

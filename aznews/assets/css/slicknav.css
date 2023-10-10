@@ -67,7 +67,7 @@
     display: inline; }
 
   @media(max-width: 378px){
-    ..slicknav_nav{
+    .slicknav_nav{
 
     }
   }
