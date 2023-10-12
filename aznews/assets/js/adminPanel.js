@@ -1,3 +1,10 @@
+import {competitionPost} from "./competitionPost.js";
+import { textarea } from "./adminPanelTextarea.js";
+
+
+
+
+
 const newsPostBtn = document.getElementById("newsPost")
 const competitionPostBtn = document.getElementById("competitionPost")
 const seminarPostBtn = document.getElementById("seminarPost")
@@ -13,6 +20,7 @@ textElements.forEach(function (textElement) {
     this.style.height = this.scrollHeight + 'px'; // Установка новой высоты
   });
 });
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -37,6 +45,8 @@ function openForm(button, add){
         stylesConteinter.setAttribute("class", "stylesConteinter")
         add.appendChild(stylesConteinter)
 
+        createStyleButton()
+        
         function styles(tag, place) {
             const selectedText = place.value.substring(place.selectionStart, place.selectionEnd);
             const tagStart = `<${tag}>`;
@@ -67,6 +77,7 @@ function openForm(button, add){
                 place.selectionEnd = startPosition + tagStart.length + selectedText.length;
             }
         }
+        
         function createStyleButton(tag, label) {
             const btn = document.createElement("button");
             btn.setAttribute("class", "styles");
@@ -76,12 +87,7 @@ function openForm(button, add){
             });
             stylesConteinter.appendChild(btn);
         }
-        
-        createStyleButton("b", "B");
-        createStyleButton("i", "I");
-        createStyleButton("u", "U");
 
-        
         // Select h1 - h5
 
         function createSelectWithRadios(sizeOpt){
@@ -145,43 +151,42 @@ function openForm(button, add){
 
         // Textarea 
 
-        const textContent = document.createElement("textarea")
-        textContent.setAttribute("id", "summernote");
-        textContent.classList.add("text")
-        textContent.classList.add("visual")
-        textContent.type = "text";
-        textContent.placeholder = "text";
+        // const textContent = document.createElement("textarea")
+        // textContent.setAttribute("id", "summernote");
+        // textContent.classList.add("text");
+        // textContent.classList.add("visual");
+        // textContent.placeholder = "text";
 
-        add.appendChild(textContent)
+        // add.appendChild(textContent)
 
                 // br on enter
 
-                textContent.addEventListener("keydown", function (e) {
-                    if (e.key === "Enter") {
-                        e.preventDefault(); // Предотвращаем переход на новую строку по умолчанию
-                        const startPosition = this.selectionStart;
-                        const endPosition = this.selectionEnd;
-                        const textBefore = this.value.substring(0, startPosition);
-                        const textAfter = this.value.substring(endPosition);
-                        this.value = textBefore + "<br>\n" + textAfter;
-                        this.selectionStart = startPosition + 5; // Установите новую позицию курсора после <br>
-                        this.selectionEnd = this.selectionStart;
-                    }
-                });
+        //         textContent.addEventListener("keydown", function (e) {
+        //             if (e.key === "Enter") {
+        //                 e.preventDefault(); // Предотвращаем переход на новую строку по умолчанию
+        //                 const startPosition = this.selectionStart;
+        //                 const endPosition = this.selectionEnd;
+        //                 const textBefore = this.value.substring(0, startPosition);
+        //                 const textAfter = this.value.substring(endPosition);
+        //                 this.value = textBefore + "<br>\n" + textAfter;
+        //                 this.selectionStart = startPosition + 5; // Установите новую позицию курсора после <br>
+        //                 this.selectionEnd = this.selectionStart;
+        //             }
+        //         });
         
-        const btnSubmit = document.createElement("button")
-        btnSubmit.classList.add("visual")
-        btnSubmit.textContent = "submit"
-        btnSubmit.addEventListener("click", ()=>{
+        // const btnSubmit = document.createElement("button")
+        // btnSubmit.classList.add("visual")
+        // btnSubmit.textContent = "submit"
+        // btnSubmit.addEventListener("click", ()=>{
             
             //backend
             
-            const newsNameInput = document.getElementById("newsName"); // Получаем элемент input по его id
-            const newsName = newsNameInput.value; // Получаем значение из input
+        //     const newsNameInput = document.getElementById("newsName"); // Получаем элемент input по его id
+        //     const newsName = newsNameInput.value; // Получаем значение из input
 
-            alert("Значение из input: " + newsName); // Показываем значение в alert
-        })
-        add.appendChild(btnSubmit)
+        //     alert("Значение из input: " + newsName); // Показываем значение в alert
+        // })
+        // add.appendChild(btnSubmit)
         
 
 
@@ -209,39 +214,75 @@ function openForm(button, add){
             form.appendChild(date)
 
         }else if(isClicked === competitionPostBtn){
-            const name = document.createElement("input")
-            const file = document.createElement("input")
-            const country = document.createElement("input")
-            const city = document.createElement("input")
-            const eMail = document.createElement("input")
-            const phone = document.createElement("input")
-            const date = document.createElement("input")
+            competitionPost()
+            textarea()
 
-            name.classList.add("visual")
-            file.classList.add("visual")
-            file.classList.add("custom-file-upload")
-            country.classList.add("visual")
-            city.classList.add("visual")
-            eMail.classList.add("visual")
-            phone.classList.add("visual")
-            date.classList.add("visual")
+            // form.classList.remove("formContent")
+            // form.classList.add("competitionBlock")
 
-            name.type = "text";
-            name.placeholder = "Virsraksts";
-            file.type = "file"
-            country.placeholder = "Country"
-            city.placeholder = "City"
-            eMail.placeholder = "E-Mail"
-            phone.placeholder = "Phone Number"
-            date.type = "date";
+            // const competitionForm = document.createElement("div")
 
-            form.appendChild(name)
-            form.appendChild(file)
-            form.appendChild(country)
-            form.appendChild(city)
-            form.appendChild(eMail)
-            form.appendChild(phone)
-            form.appendChild(date)
+            // competitionForm.classList.add("competitionForm")
+            
+            // const file = document.createElement("input")
+            // const name = document.createElement("input")
+            // const country = document.createElement("input")
+            // const city = document.createElement("input")
+            // const eMail = document.createElement("input")
+            // const phone = document.createElement("input")
+            // const date = document.createElement("input")
+
+            // name.classList.add("visual")
+            // file.classList.add("visual")
+            // file.classList.add("custom-file-upload")
+            // country.classList.add("visual")
+            // city.classList.add("visual")
+            // eMail.classList.add("visual")
+            // phone.classList.add("visual")
+            // date.classList.add("visual")
+
+            // name.type = "text";
+            // name.placeholder = "Virsraksts";
+            // file.type = "file"
+            // country.placeholder = "Country"
+            // city.placeholder = "City"
+            // eMail.placeholder = "E-Mail"
+            // phone.placeholder = "Phone Number"
+            // date.type = "date";
+
+            // form.appendChild(competitionForm)
+            // competitionForm.appendChild(name)
+            // competitionForm.appendChild(file)
+            // competitionForm.appendChild(country)
+            // competitionForm.appendChild(city)
+            // competitionForm.appendChild(eMail)
+            // competitionForm.appendChild(phone)
+            // competitionForm.appendChild(date)
+
+            // const competitionCategory = document.createElement("div")
+            // competitionCategory.classList.add("competitionForm")
+            // competitionCategory.classList.add("competitionCategory")
+
+            // const sex = document.createElement("select")
+
+            // const optionSex = document.createElement("option")
+            // optionSex.text = "Dzimums";
+            // optionSex.value = "choise"; 
+            // const optionMale = document.createElement("option")
+            // optionMale.text = "Virietis";
+            // optionMale.value = "male"; 
+            // const optionFemale = document.createElement("option")
+            // optionFemale.text = "Sieviete";
+            // optionFemale.value = "female";
+
+            // const year = document.createElement("input")
+
+
+            // form.appendChild(competitionCategory)
+            // competitionCategory.appendChild(sex)
+            // sex.appendChild(optionSex)
+            // sex.appendChild(optionMale)
+            // sex.appendChild(optionFemale)
         }else if(isClicked === seminarPostBtn){
             const name = document.createElement("input")
             const file = document.createElement("input")

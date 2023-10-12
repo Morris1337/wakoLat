@@ -236,3 +236,20 @@ display: none;
     margin-top: 5px;
 }
 
+.competitionForm{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: space-evenly;
+    justify-items: stretch;
+}
+
+.competitionBlock{
+    display: flex!important;
+    flex-direction: column;
+}
+.competitionCategory{
+    padding: 10px;
+}
+
+
+
