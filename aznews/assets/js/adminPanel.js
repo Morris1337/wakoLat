@@ -1,5 +1,8 @@
-import {competitionPost} from "./competitionPost.js";
+import {competitionPost} from "./adminPanelCompetitionPost.js";
+import { newsPost } from "./adminPanelNewsPost.js";
 import { textarea } from "./adminPanelTextarea.js";
+import { styles, createStyleButton, createSelectWithRadios, sizeOpt,
+    selectWithRadios, createSelectTextCollor, textCollor } from "./adminPanesStyles.js";
 
 
 
@@ -39,115 +42,115 @@ function openForm(button, add){
         form.classList.add("formContent")
         add.appendChild(form)
 
-        // Стили для текста
+        // // Стили для текста
 
-        const stylesConteinter = document.createElement("div")
-        stylesConteinter.setAttribute("class", "stylesConteinter")
-        add.appendChild(stylesConteinter)
+        // const stylesConteinter = document.createElement("div")
+        // stylesConteinter.setAttribute("class", "stylesConteinter")
+        // add.appendChild(stylesConteinter)
 
-        createStyleButton()
+        // createStyleButton()
         
-        function styles(tag, place) {
-            const selectedText = place.value.substring(place.selectionStart, place.selectionEnd);
-            const tagStart = `<${tag}>`;
-            const tagEnd = `</${tag}>`;
+        // function styles(tag, place) {
+        //     const selectedText = place.value.substring(place.selectionStart, place.selectionEnd);
+        //     const tagStart = `<${tag}>`;
+        //     const tagEnd = `</${tag}>`;
         
-            // Проверяем, содержит ли выделенный текст уже тег
-            const alreadyContainsTag = selectedText.startsWith(tagStart) && selectedText.endsWith(tagEnd);
+        //     // Проверяем, содержит ли выделенный текст уже тег
+        //     const alreadyContainsTag = selectedText.startsWith(tagStart) && selectedText.endsWith(tagEnd);
         
-            if (alreadyContainsTag) {
-                // Убираем тег
-                const newText = selectedText.slice(tagStart.length, -tagEnd.length);
-                const startPosition = place.selectionStart;
-                const endPosition = place.selectionEnd;
-                const textBefore = place.value.substring(0, startPosition);
-                const textAfter = place.value.substring(endPosition);
-                place.value = textBefore + newText + textAfter;
-                place.selectionStart = startPosition;
-                place.selectionEnd = startPosition + newText.length;
-            } else {
-                // Добавляем тег
-                const newText = `${tagStart}${selectedText}${tagEnd}`;
-                const startPosition = place.selectionStart;
-                const endPosition = place.selectionEnd;
-                const textBefore = place.value.substring(0, startPosition);
-                const textAfter = place.value.substring(endPosition);
-                place.value = textBefore + newText + textAfter;
-                place.selectionStart = startPosition + tagStart.length;
-                place.selectionEnd = startPosition + tagStart.length + selectedText.length;
-            }
-        }
+        //     if (alreadyContainsTag) {
+        //         // Убираем тег
+        //         const newText = selectedText.slice(tagStart.length, -tagEnd.length);
+        //         const startPosition = place.selectionStart;
+        //         const endPosition = place.selectionEnd;
+        //         const textBefore = place.value.substring(0, startPosition);
+        //         const textAfter = place.value.substring(endPosition);
+        //         place.value = textBefore + newText + textAfter;
+        //         place.selectionStart = startPosition;
+        //         place.selectionEnd = startPosition + newText.length;
+        //     } else {
+        //         // Добавляем тег
+        //         const newText = `${tagStart}${selectedText}${tagEnd}`;
+        //         const startPosition = place.selectionStart;
+        //         const endPosition = place.selectionEnd;
+        //         const textBefore = place.value.substring(0, startPosition);
+        //         const textAfter = place.value.substring(endPosition);
+        //         place.value = textBefore + newText + textAfter;
+        //         place.selectionStart = startPosition + tagStart.length;
+        //         place.selectionEnd = startPosition + tagStart.length + selectedText.length;
+        //     }
+        // }
         
-        function createStyleButton(tag, label) {
-            const btn = document.createElement("button");
-            btn.setAttribute("class", "styles");
-            btn.textContent = label;
-            btn.addEventListener("click", () => {
-                styles(tag, textContent);
-            });
-            stylesConteinter.appendChild(btn);
-        }
+        // function createStyleButton(tag, label) {
+        //     const btn = document.createElement("button");
+        //     btn.setAttribute("class", "styles");
+        //     btn.textContent = label;
+        //     btn.addEventListener("click", () => {
+        //         styles(tag, textContent);
+        //     });
+        //     stylesConteinter.appendChild(btn);
+        // }
 
-        // Select h1 - h5
+        // // Select h1 - h5
 
-        function createSelectWithRadios(sizeOpt){
-            const selectH = document.createElement("select")
+        // function createSelectWithRadios(sizeOpt){
+        //     const selectH = document.createElement("select")
 
-            sizeOpt.forEach((size) =>{
-                const choiseH = document.createElement("option")
-                choiseH.textContent = size.toUpperCase();
-                choiseH.value = size;
-                selectH.appendChild(choiseH)
-            });
+        //     sizeOpt.forEach((size) =>{
+        //         const choiseH = document.createElement("option")
+        //         choiseH.textContent = size.toUpperCase();
+        //         choiseH.value = size;
+        //         selectH.appendChild(choiseH)
+        //     });
 
-            selectH.addEventListener("change", ()=>{
-                const selectSize = selectH.value
-                styles(selectSize, textContent)
-            })
+        //     selectH.addEventListener("change", ()=>{
+        //         const selectSize = selectH.value
+        //         styles(selectSize, textContent)
+        //     })
             
-            return selectH
-        }
-        const sizeOpt = ["h1", "h2", "h3", "h4", "h5"]
-        const selectWithRadios = createSelectWithRadios(sizeOpt)
+        //     return selectH
+        // }
+        // const sizeOpt = ["h1", "h2", "h3", "h4", "h5"]
+        // const selectWithRadios = createSelectWithRadios(sizeOpt)
 
-        stylesConteinter.appendChild(selectWithRadios)
+        // stylesConteinter.appendChild(selectWithRadios)
 
         // TextColor
 
-        function changeTextColor(color, place) {
-            const selectedText = place.value.substring(place.selectionStart, place.selectionEnd);
-            const newText = `<span style="color:${color};">${selectedText}</span>`;
-            const startPosition = place.selectionStart;
-            const endPosition = place.selectionEnd;
-            const textBefore = place.value.substring(0, startPosition);
-            const textAfter = place.value.substring(endPosition);
-            place.value = textBefore + newText + textAfter;
-            place.selectionStart = startPosition;
-            place.selectionEnd = startPosition + newText.length;
-        }
+        // function changeTextColor(color, place) {
+        //     const selectedText = place.value.substring(place.selectionStart, place.selectionEnd);
+        //     const newText = `<span style="color:${color};">${selectedText}</span>`;
+        //     const startPosition = place.selectionStart;
+        //     const endPosition = place.selectionEnd;
+        //     const textBefore = place.value.substring(0, startPosition);
+        //     const textAfter = place.value.substring(endPosition);
+        //     place.value = textBefore + newText + textAfter;
+        //     place.selectionStart = startPosition;
+        //     place.selectionEnd = startPosition + newText.length;
+        // }
 
-        function createSelectTextCollor(textCollor) {
-            const selectTextCollor = document.createElement("select");
+        // function createSelectTextCollor(textCollor) {
+        //     const selectTextCollor = document.createElement("select");
         
-            textCollor.forEach((color) => {
-                const choiseTextCollor = document.createElement("option");
-                choiseTextCollor.textContent = color.toUpperCase();
-                choiseTextCollor.value = color;
-                selectTextCollor.appendChild(choiseTextCollor);
-            });
+        //     textCollor.forEach((color) => {
+        //         const choiseTextCollor = document.createElement("option");
+        //         choiseTextCollor.textContent = color.toUpperCase();
+        //         choiseTextCollor.value = color;
+        //         selectTextCollor.appendChild(choiseTextCollor);
+        //     });
         
-            selectTextCollor.addEventListener("change", () => {
-                const selectedColor = selectTextCollor.value;
-                changeTextColor(selectedColor, textContent); // Изменить цвет текста
-            });
+        //     selectTextCollor.addEventListener("change", () => {
+        //         const selectedColor = selectTextCollor.value;
+        //         changeTextColor(selectedColor, textContent); // Изменить цвет текста
+        //     });
         
-            return selectTextCollor;
-        }
+        //     return selectTextCollor;
+        // }
         
-        const textCollor = ["red", "blue", "green", "yellow", "black"];
-        const selectTextCollor = createSelectTextCollor(textCollor);
+        // const textCollor = ["red", "blue", "green", "yellow", "black"];
+        // const selectTextCollor = createSelectTextCollor(textCollor);
         
-        stylesConteinter.appendChild(selectTextCollor);
+        // stylesConteinter.appendChild(selectTextCollor);
 
         // Textarea 
 
@@ -193,97 +196,26 @@ function openForm(button, add){
         let isClicked = button
 
         if(isClicked === newsPostBtn){
-            const name = document.createElement("input")
-            const file = document.createElement("input")
-            const date = document.createElement("input")
 
-            name.setAttribute("id", "newsName"); //id для бекэнда
+            textarea()
+            styles()
+            createStyleButton()
+            createSelectWithRadios() 
+            sizeOpt
+            selectWithRadios 
+            createSelectTextCollor() 
+            textCollor
 
-            name.classList.add("visual")
-            file.classList.add("visual")
-            date.classList.add("visual")
-
-            name.type = "text";
-            name.placeholder = "Virsraksts";
-            file.type = "file"
-            file.classList.add("custom-file-upload")
-            date.type = "date";
-        
-            form.appendChild(name)
-            form.appendChild(file)
-            form.appendChild(date)
+            newsPost()
 
         }else if(isClicked === competitionPostBtn){
             competitionPost()
             textarea()
 
-            // form.classList.remove("formContent")
-            // form.classList.add("competitionBlock")
-
-            // const competitionForm = document.createElement("div")
-
-            // competitionForm.classList.add("competitionForm")
-            
-            // const file = document.createElement("input")
-            // const name = document.createElement("input")
-            // const country = document.createElement("input")
-            // const city = document.createElement("input")
-            // const eMail = document.createElement("input")
-            // const phone = document.createElement("input")
-            // const date = document.createElement("input")
-
-            // name.classList.add("visual")
-            // file.classList.add("visual")
-            // file.classList.add("custom-file-upload")
-            // country.classList.add("visual")
-            // city.classList.add("visual")
-            // eMail.classList.add("visual")
-            // phone.classList.add("visual")
-            // date.classList.add("visual")
-
-            // name.type = "text";
-            // name.placeholder = "Virsraksts";
-            // file.type = "file"
-            // country.placeholder = "Country"
-            // city.placeholder = "City"
-            // eMail.placeholder = "E-Mail"
-            // phone.placeholder = "Phone Number"
-            // date.type = "date";
-
-            // form.appendChild(competitionForm)
-            // competitionForm.appendChild(name)
-            // competitionForm.appendChild(file)
-            // competitionForm.appendChild(country)
-            // competitionForm.appendChild(city)
-            // competitionForm.appendChild(eMail)
-            // competitionForm.appendChild(phone)
-            // competitionForm.appendChild(date)
-
-            // const competitionCategory = document.createElement("div")
-            // competitionCategory.classList.add("competitionForm")
-            // competitionCategory.classList.add("competitionCategory")
-
-            // const sex = document.createElement("select")
-
-            // const optionSex = document.createElement("option")
-            // optionSex.text = "Dzimums";
-            // optionSex.value = "choise"; 
-            // const optionMale = document.createElement("option")
-            // optionMale.text = "Virietis";
-            // optionMale.value = "male"; 
-            // const optionFemale = document.createElement("option")
-            // optionFemale.text = "Sieviete";
-            // optionFemale.value = "female";
-
-            // const year = document.createElement("input")
-
-
-            // form.appendChild(competitionCategory)
-            // competitionCategory.appendChild(sex)
-            // sex.appendChild(optionSex)
-            // sex.appendChild(optionMale)
-            // sex.appendChild(optionFemale)
         }else if(isClicked === seminarPostBtn){
+
+            textarea()
+            
             const name = document.createElement("input")
             const file = document.createElement("input")
             const date = document.createElement("input")

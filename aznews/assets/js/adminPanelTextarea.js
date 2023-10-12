@@ -6,7 +6,7 @@ function textarea(){
     textContent.classList.add("visual");
     textContent.placeholder = "text";
     
-    add.appendChild(textContent)
+    form.appendChild(textContent)
 
     // br on enter
 
@@ -32,7 +32,7 @@ textContent.addEventListener("keydown", function (e) {
 
     alert("Значение из input: " + newsName); // Показываем значение в alert
 })
-add.appendChild(btnSubmit)
+form.appendChild(btnSubmit)
 });
 }
 
