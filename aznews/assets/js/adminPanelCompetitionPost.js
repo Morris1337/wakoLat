@@ -2,10 +2,11 @@
 
 
 function competitionPost(){
+    
             form.classList.remove("formContent")
             form.classList.add("competitionBlock")
 
-            const competitionForm = document.createElement("div")
+            const competitionForm = document.createElement("form")
 
             competitionForm.classList.add("competitionForm")
             
@@ -44,11 +45,12 @@ function competitionPost(){
             competitionForm.appendChild(phone)
             competitionForm.appendChild(date)
 
-            const competitionCategory = document.createElement("div")
+            const competitionCategory = document.createElement("form")
             competitionCategory.classList.add("competitionForm")
             competitionCategory.classList.add("competitionCategory")
 
             const sex = document.createElement("select")
+            sex.classList.add("visual")
 
             const optionSex = document.createElement("option")
             optionSex.text = "Dzimums";
@@ -60,7 +62,47 @@ function competitionPost(){
             optionFemale.text = "Sieviete";
             optionFemale.value = "female";
 
-            const year = document.createElement("input")
+
+            const yearBlock = document.createElement("div")
+
+            yearBlock.style.display = "grid"
+            yearBlock.style.justifyContent = "center"
+            yearBlock.style.alignItems = "center"
+
+            const initialYearInput = createYearInput(false);
+            yearBlock.appendChild(initialYearInput);
+            
+            function createYearInput(isReadOnly = true) {
+
+                const year = document.createElement("input")
+                year.classList.add("visual")
+                year.classList.add("competitionYear")
+                year.placeholder = "gads"
+
+                if (!isReadOnly) {
+                    year.readOnly = false; // Разрешаем ввод только если isReadOnly равен false
+                  }
+    
+                year.addEventListener("input", ()=>{
+                    const inputValue = year.value;
+    
+                    if(inputValue.length !== 4 || !/^\d{4}$/.test(inputValue)){
+                        year.setCustomValidity("Год указан неверно! Введите ровно 4 цифры.");
+                    }else{
+                        year.setCustomValidity(""); 
+                    }
+                });
+                return year
+            };
+
+            const yearPlus = document.createElement("img")
+                yearPlus.src = "assets/img/icon/plus-square.svg"
+                yearPlus.classList.add("visual")
+    
+                yearPlus.addEventListener("click", ()=>{
+                    const newYearInput = createYearInput();
+                    yearBlock.appendChild(newYearInput)
+                })
 
 
             form.appendChild(competitionCategory)
@@ -68,6 +110,8 @@ function competitionPost(){
             sex.appendChild(optionSex)
             sex.appendChild(optionMale)
             sex.appendChild(optionFemale)
+            competitionCategory.appendChild(yearBlock)           
+            yearBlock.appendChild(yearPlus)
 }
 
 

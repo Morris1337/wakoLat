@@ -1,10 +1,12 @@
 
-
 // Стили для текста
+
 
 const stylesConteinter = document.createElement("div")
 stylesConteinter.setAttribute("class", "stylesConteinter")
 form.appendChild(stylesConteinter)
+
+
 
 createStyleButton()
 
@@ -48,7 +50,7 @@ function createStyleButton(tag, label) {
     btn.addEventListener("click", () => {
         styles(tag, textContent);
     });
-    stylesConteinter.appendChild(btn);
+    form.appendChild(btn);
 }
 
 
@@ -75,7 +77,7 @@ function createSelectWithRadios(sizeOpt){
 const sizeOpt = ["h1", "h2", "h3", "h4", "h5"]
 const selectWithRadios = createSelectWithRadios(sizeOpt)
 
-stylesConteinter.appendChild(selectWithRadios)
+form.appendChild(selectWithRadios);
 
 
 // TextColor
@@ -95,6 +97,7 @@ function changeTextColor(color, place) {
 function createSelectTextCollor(textCollor) {
     const selectTextCollor = document.createElement("select");
 
+    form.appendChild(selectTextCollor)
     textCollor.forEach((color) => {
         const choiseTextCollor = document.createElement("option");
         choiseTextCollor.textContent = color.toUpperCase();
@@ -110,11 +113,12 @@ function createSelectTextCollor(textCollor) {
     return selectTextCollor;
 }
 
+
 const textCollor = ["red", "blue", "green", "yellow", "black"];
         const selectTextCollor = createSelectTextCollor(textCollor);
         
-        stylesConteinter.appendChild(selectTextCollor);
+        form.appendChild(selectTextCollor);
 
 
-export {styles, createStyleButton, createSelectWithRadios, sizeOpt,
+export { styles, createStyleButton, createSelectWithRadios, sizeOpt,
     selectWithRadios, createSelectTextCollor, textCollor}

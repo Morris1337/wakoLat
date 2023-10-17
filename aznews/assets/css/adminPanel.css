@@ -37,6 +37,15 @@ input{
     overflow-x: auto; /* Полоса прокрутки горизонтально */
 }
 
+
+option{
+    border: solid black 3px;
+    border-radius: 10px;
+    height: 40px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
 textarea{
     width: 100%;
     min-width: 300px;
@@ -251,5 +260,9 @@ display: none;
     padding: 10px;
 }
 
+
+input.competitionYear{
+    
+}
 
 
