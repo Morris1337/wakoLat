@@ -8,7 +8,6 @@ function textarea(){
     
     form.appendChild(textContent)
 
-    styles()
     // br on enter
 
     textContent.addEventListener("keydown", function (e) {

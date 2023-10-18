@@ -38,8 +38,8 @@ input{
 }
 
 
-option{
-    border: solid black 3px;
+select{
+    border: solid black 1px;
     border-radius: 10px;
     height: 40px;
     max-width: 100%;

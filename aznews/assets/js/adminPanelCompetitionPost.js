@@ -68,6 +68,7 @@ function competitionPost(){
             yearBlock.style.display = "grid"
             yearBlock.style.justifyContent = "center"
             yearBlock.style.alignItems = "center"
+            yearBlock.style.gridTemplateColumns = "repeat(2, fit-content)"
 
             const initialYearInput = createYearInput(false);
             yearBlock.appendChild(initialYearInput);
@@ -95,14 +96,25 @@ function competitionPost(){
                 return year
             };
 
-            const yearPlus = document.createElement("img")
+            function yearPlus (){
+                const yearPlus = document.createElement("img")
                 yearPlus.src = "assets/img/icon/plus-square.svg"
                 yearPlus.classList.add("visual")
-    
+                yearBlock.appendChild(yearPlus)
                 yearPlus.addEventListener("click", ()=>{
                     const newYearInput = createYearInput();
                     yearBlock.appendChild(newYearInput)
+                    const newYearPlus = yearPlus();
+                    yearBlock.appendChild(newYearPlus)
+                    
                 })
+                return yearPlus
+            }
+            yearPlus()
+
+
+
+
 
 
             form.appendChild(competitionCategory)
@@ -111,7 +123,7 @@ function competitionPost(){
             sex.appendChild(optionMale)
             sex.appendChild(optionFemale)
             competitionCategory.appendChild(yearBlock)           
-            yearBlock.appendChild(yearPlus)
+            // yearBlock.appendChild(yearPlus)
 }
 
 
