@@ -205,6 +205,7 @@ display: none;
 }
 
 .visual{
+    width: 700px;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -257,12 +258,63 @@ display: none;
     flex-direction: column;
 }
 .competitionCategory{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    justify-content: space-evenly;
+    justify-items: stretch;
     padding: 10px;
 }
 
 
-input.competitionYear{
-    
+/* year select */
+
+.year-block{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 450px;
+    height: 300px;
+    padding: 10px;
+    background-color: #9c9c9cd8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    margin-right: 10px;
+    white-space: wrap; /* Запрещаем перенос текста на новую строку */
+    overflow: auto; /* Скрываем текст, который не помещается */
 }
 
+.year-block-open-btn{
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid black;
+    width: 300px;
+    height: 40px;
+}
 
+.year-block-open-btn:hover{
+    background-color: rgb(153, 153, 153);
+}
+
+.year-block-conteiner-checkbox{
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+}
+
+.year-block-checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+}
+
+.year-block-label {
+    display: inline-block;
+  vertical-align: middle;
+}
+
+.year-block-close-btn{
+    width: 60px;
+    height: 35px;
+}

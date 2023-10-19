@@ -46,7 +46,6 @@ function competitionPost(){
             competitionForm.appendChild(date)
 
             const competitionCategory = document.createElement("form")
-            competitionCategory.classList.add("competitionForm")
             competitionCategory.classList.add("competitionCategory")
 
             const sex = document.createElement("select")
@@ -62,56 +61,152 @@ function competitionPost(){
             optionFemale.text = "Sieviete";
             optionFemale.value = "female";
 
+            let isYearBlockOpen = false;
 
-            const yearBlock = document.createElement("div")
+            const btnYear = document.createElement("button")
+            btnYear.classList.add("visual")
+            btnYear.classList.add("year-block-open-btn")
+            btnYear.textContent = "year"
 
-            yearBlock.style.display = "grid"
-            yearBlock.style.justifyContent = "center"
-            yearBlock.style.alignItems = "center"
-            yearBlock.style.gridTemplateColumns = "repeat(2, fit-content)"
-
-            const initialYearInput = createYearInput(false);
-            yearBlock.appendChild(initialYearInput);
+            if(!isYearBlockOpen){
+                
             
-            function createYearInput(isReadOnly = true) {
+                btnYear.addEventListener("click", (event)=>{
+                    event.preventDefault();
+                    const yearBlock = document.createElement("div")
+                    yearBlock.classList.add("year-block")
+                    competitionCategory.appendChild(yearBlock)
+                    const btnCloseYear = document.createElement("button")
+                    const conteinesCloseBtn = document.createElement("div")
+                    yearBlock.appendChild(conteinesCloseBtn)
+                    btnCloseYear.classList.add("year-block-close-btn")
+                    btnCloseYear.textContent = "Ok"
+                    btnCloseYear.addEventListener("click", (event)=>{
+                        event.preventDefault()
+                        yearBlock.remove(); // Удаляем yearBlock
+                        isYearBlockOpen = false;
+                        btnYear.disabled = false;
 
-                const year = document.createElement("input")
-                year.classList.add("visual")
-                year.classList.add("competitionYear")
-                year.placeholder = "gads"
+                    })
+                    isYearBlockOpen = true;
+                    btnYear.disabled = true;
 
-                if (!isReadOnly) {
-                    year.readOnly = false; // Разрешаем ввод только если isReadOnly равен false
-                  }
+                    const conteinerCheckbox = document.createElement("div")
+                    conteinerCheckbox.classList.add("year-block-conteiner-checkbox")
+                    yearBlock.appendChild(conteinerCheckbox)
+
+                    function addYear(year){
+                        const checkBox = document.createElement("input");
+                        checkBox.classList.add("year-block-checkbox")
+                        checkBox.type = "checkbox";
+                        checkBox.id = `checkbox${year}`; // Установите уникальный ID
+                        checkBox.name = "yearCheckbox"; // Установите имя, если необходимо
+                        checkBox.value = year; // Установите значение, если необходимо
+                        conteinerCheckbox.appendChild(checkBox)
     
-                year.addEventListener("input", ()=>{
-                    const inputValue = year.value;
-    
-                    if(inputValue.length !== 4 || !/^\d{4}$/.test(inputValue)){
-                        year.setCustomValidity("Год указан неверно! Введите ровно 4 цифры.");
-                    }else{
-                        year.setCustomValidity(""); 
+                        const label = document.createElement("label");
+                        label.classList.add("year-block-label")
+                        label.setAttribute("for", `checkbox${year}`); // Устанавливаем "for" атрибут, связывая label с чекбоксом
+                        label.textContent = `${year}`; // Добавляем текст в label
+                        conteinerCheckbox.appendChild(label); // Добавляем label к yearBlock    
                     }
-                });
-                return year
-            };
+                    const currentYear = new Date().getFullYear();
+                    for (let year = 1980; year <= currentYear; year++){
+                        addYear(year)
+                    }
+                    conteinesCloseBtn.appendChild(btnCloseYear)
 
-            function yearPlus (){
-                const yearPlus = document.createElement("img")
-                yearPlus.src = "assets/img/icon/plus-square.svg"
-                yearPlus.classList.add("visual")
-                yearBlock.appendChild(yearPlus)
-                yearPlus.addEventListener("click", ()=>{
-                    const newYearInput = createYearInput();
-                    yearBlock.appendChild(newYearInput)
-                    const newYearPlus = yearPlus();
-                    yearBlock.appendChild(newYearPlus)
-                    
                 })
-                return yearPlus
+            
             }
-            yearPlus()
 
+            const roundAmount = document.createElement("div")
+            const roundSelect = document.createElement("select")
+            roundSelect.classList.add("visual")
+
+            const optionAmount = ["Raundu skaits", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            for(let i = 0; i < optionAmount.length; i++){
+                const option = document.createElement("option");
+                option.value = optionAmount[i];
+                option.text = optionAmount[i];
+                roundSelect.appendChild(option);
+            }
+
+
+            roundAmount.appendChild(roundSelect)
+
+            const roundLenght = document.createElement("div")
+            const roundLenghtSelect = document.createElement("select")
+            roundLenghtSelect.classList.add("visual")
+
+            const optionLength = ["Raundu ilgums", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+            for(let i = 0; i < optionLength.length; i++){
+                const option = document.createElement("option");
+                option.value = optionLength[i];
+                option.text = `${optionLength[i]} min `;
+                roundLenghtSelect.appendChild(option);
+            }
+
+
+            roundLenght.appendChild(roundLenghtSelect)
+
+            let isWeightBlockOpen = false;
+
+            const personWeight = document.createElement("div")
+            const btnWeight = document.createElement("button")
+            btnWeight.classList.add("visual")
+            btnWeight.classList.add("year-block-open-btn")
+            btnWeight.textContent = "year"
+
+            if(!isWeightBlockOpen){
+                btnWeight.addEventListener("click", (event)=>{
+                    event.preventDefault();
+                    const weightBlock = document.createElement("div")
+                    weightBlock.classList.add("year-block")
+                    competitionCategory.appendChild(weightBlock)
+                    const btnWeightYear = document.createElement("button")
+                    const conteinesCloseBtn = document.createElement("div")
+                    weightBlock.appendChild(conteinesCloseBtn)
+                    btnWeightYear.classList.add("year-block-close-btn")
+                    btnWeightYear.textContent = "Ok"
+                    btnWeightYear.addEventListener("click", (event)=>{
+                        event.preventDefault()
+                        weightBlock.remove(); // Удаляем yearBlock
+                        isWeightBlockOpen = false;
+                        btnWeight.disabled = false;
+
+                    })
+                    isYearBlockOpen = true;
+                    btnWeight.disabled = true;
+
+                    const conteinerCheckbox = document.createElement("div")
+                    conteinerCheckbox.classList.add("year-block-conteiner-checkbox")
+                    weightBlock.appendChild(conteinerCheckbox)
+
+                    function addYear(year){
+                        const checkBox = document.createElement("input");
+                        checkBox.classList.add("year-block-checkbox")
+                        checkBox.type = "checkbox";
+                        checkBox.id = `checkbox${year}`; // Установите уникальный ID
+                        checkBox.name = "yearCheckbox"; // Установите имя, если необходимо
+                        checkBox.value = year; // Установите значение, если необходимо
+                        conteinerCheckbox.appendChild(checkBox)
+    
+                        const label = document.createElement("label");
+                        label.classList.add("year-block-label")
+                        label.setAttribute("for", `checkbox${year}`); // Устанавливаем "for" атрибут, связывая label с чекбоксом
+                        label.textContent = `${year}`; // Добавляем текст в label
+                        conteinerCheckbox.appendChild(label); // Добавляем label к yearBlock    
+                    }
+                    const currentYear = new Date().getFullYear();
+                    for (let year = 1980; year <= currentYear; year++){
+                        addYear(year)
+                    }
+                    conteinesCloseBtn.appendChild(btnCloseYear)
+
+                })
+            
+            }
 
 
 
@@ -122,8 +217,11 @@ function competitionPost(){
             sex.appendChild(optionSex)
             sex.appendChild(optionMale)
             sex.appendChild(optionFemale)
-            competitionCategory.appendChild(yearBlock)           
-            // yearBlock.appendChild(yearPlus)
+            competitionCategory.appendChild(btnYear)
+            competitionCategory.appendChild(roundAmount)
+            competitionCategory.appendChild(roundLenght)
+            competitionCategory.appendChild(personWeight)
+
 }
 
 
