@@ -143,7 +143,7 @@ function competitionPost(){
             for(let i = 0; i < optionLength.length; i++){
                 const option = document.createElement("option");
                 option.value = optionLength[i];
-                option.text = `${optionLength[i]} min `;
+                option.text = `${optionLength[i]} min. `;
                 roundLenghtSelect.appendChild(option);
             }
 
@@ -156,20 +156,21 @@ function competitionPost(){
             const btnWeight = document.createElement("button")
             btnWeight.classList.add("visual")
             btnWeight.classList.add("year-block-open-btn")
-            btnWeight.textContent = "year"
+            btnWeight.textContent = "Sportistu svars"
+            personWeight.appendChild(btnWeight)
 
             if(!isWeightBlockOpen){
                 btnWeight.addEventListener("click", (event)=>{
                     event.preventDefault();
                     const weightBlock = document.createElement("div")
-                    weightBlock.classList.add("year-block")
-                    competitionCategory.appendChild(weightBlock)
-                    const btnWeightYear = document.createElement("button")
-                    const conteinesCloseBtn = document.createElement("div")
-                    weightBlock.appendChild(conteinesCloseBtn)
-                    btnWeightYear.classList.add("year-block-close-btn")
-                    btnWeightYear.textContent = "Ok"
-                    btnWeightYear.addEventListener("click", (event)=>{
+                    weightBlock.classList.add("weight-block")
+                    personWeight.appendChild(weightBlock)
+                    const btncloseWeight = document.createElement("button")
+                    const weightCloceConteiner = document.createElement("div")
+                    weightBlock.appendChild(weightCloceConteiner)
+                    btncloseWeight.classList.add("year-block-close-btn")
+                    btncloseWeight.textContent = "Ok"
+                    btncloseWeight.addEventListener("click", (event)=>{
                         event.preventDefault()
                         weightBlock.remove(); // Удаляем yearBlock
                         isWeightBlockOpen = false;
@@ -183,31 +184,34 @@ function competitionPost(){
                     conteinerCheckbox.classList.add("year-block-conteiner-checkbox")
                     weightBlock.appendChild(conteinerCheckbox)
 
-                    function addYear(year){
+                    function addWeight(weight){
                         const checkBox = document.createElement("input");
                         checkBox.classList.add("year-block-checkbox")
                         checkBox.type = "checkbox";
-                        checkBox.id = `checkbox${year}`; // Установите уникальный ID
-                        checkBox.name = "yearCheckbox"; // Установите имя, если необходимо
-                        checkBox.value = year; // Установите значение, если необходимо
+                        checkBox.id = `checkbox${weight}`; // Установите уникальный ID
+                        checkBox.name = "weightCheckbox"; // Установите имя, если необходимо
+                        checkBox.value = weight; // Установите значение, если необходимо
                         conteinerCheckbox.appendChild(checkBox)
     
                         const label = document.createElement("label");
-                        label.classList.add("year-block-label")
-                        label.setAttribute("for", `checkbox${year}`); // Устанавливаем "for" атрибут, связывая label с чекбоксом
-                        label.textContent = `${year}`; // Добавляем текст в label
+                        label.classList.add("weight-block-label")
+                        label.setAttribute("for", `checkbox${weight}`); // Устанавливаем "for" атрибут, связывая label с чекбоксом
+                        label.textContent = `${weight} KG`; // Добавляем текст в label
                         conteinerCheckbox.appendChild(label); // Добавляем label к yearBlock    
                     }
-                    const currentYear = new Date().getFullYear();
-                    for (let year = 1980; year <= currentYear; year++){
-                        addYear(year)
+                    const defaultWeight = 100;
+                    for (let weight = 10; weight <= defaultWeight ; weight += 5){
+                        addWeight(weight)
                     }
-                    conteinesCloseBtn.appendChild(btnCloseYear)
-
+                    weightCloceConteiner.appendChild(btncloseWeight)
                 })
-            
             }
 
+            const competitionCategoryPlus = document.createElement("img")
+            competitionCategory.classList.add("competitionCategory")
+            form.appendChild(competitionCategoryPlus)
+
+            const buttonPlus = document.createElement("img")
 
 
 

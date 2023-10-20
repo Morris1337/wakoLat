@@ -318,3 +318,22 @@ display: none;
     width: 60px;
     height: 35px;
 }
+/* weight */
+
+.weight-block{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 450px;
+    height: 230px;
+    padding: 10px;
+    background-color: #9c9c9cd8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    margin-right: 10px;
+    white-space: wrap; /* Запрещаем перенос текста на новую строку */
+    overflow: auto; /* Скрываем текст, который не помещается */
+}
