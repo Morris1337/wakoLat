@@ -2,6 +2,13 @@
 
 function seminarPost(){
 
+            const postName = document.createElement("h2")
+            postName.textContent = "Jauns seminars"
+            postName.classList.add("flex-center")
+            form.appendChild(postName)
+
+            const SeminarPostForm = document.createElement("form")
+            SeminarPostForm.classList.add("formContent")
             form.classList.add("formContent")
             const name = document.createElement("input")
             const file = document.createElement("input")
@@ -29,12 +36,13 @@ function seminarPost(){
             contactPhone.type = "phone"
             eMail.placeholder = "E-Mail"
         
-            form.appendChild(name)
-            form.appendChild(file)
-            form.appendChild(date)
-            form.appendChild(contactPerson)
-            form.appendChild(contactPhone)
-            form.appendChild(eMail)
+            form.appendChild(SeminarPostForm)
+            SeminarPostForm.appendChild(name)
+            SeminarPostForm.appendChild(file)
+            SeminarPostForm.appendChild(date)
+            SeminarPostForm.appendChild(contactPerson)
+            SeminarPostForm.appendChild(contactPhone)
+            SeminarPostForm.appendChild(eMail)
 }
 
 export {seminarPost}

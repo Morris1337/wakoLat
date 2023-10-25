@@ -1,5 +1,5 @@
 html{
-    height: 700px;
+    height: 100vh;
 }
 
 body{
@@ -53,6 +53,11 @@ textarea{
     border-radius: 10px;
 }
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
 
 .conteiner-admin{
     width: 100%;
@@ -65,7 +70,7 @@ textarea{
 .admin-menu{
     width: 400px;
     min-width: 250px;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: rgb(54, 53, 53);
     border-radius: 3px;
 }
@@ -74,6 +79,7 @@ textarea{
     display: flex;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
 }
 
 
@@ -114,8 +120,8 @@ form{
     }
 
     .admin-menu-phone.open{
-        height: 700px;
-        position: absolute;
+        height: 100vh;
+        position: fixed;
         z-index: 15;
         width: 212px;
     }
@@ -129,7 +135,8 @@ form{
     }
     
     .admin-menu-icon-phone-block{
-        position: relative;
+        position: fixed;
+        height: 100vh;
         z-index: 10;
         width: 28px;
         background-color: rgb(54, 53, 53);
@@ -138,6 +145,11 @@ form{
         justify-content: flex-end;
         align-items: center;
         border-radius: 42px;
+        
+    }
+
+    .admin-menu-icon-phone-block.open{
+        position: relative;
     }
     .admin-menu-icon{
         height: 700px;
@@ -266,14 +278,15 @@ display: none;
 }
 
 
-/* year select */
+/* competition block styles */
 
-.year-block{
+.competition-open-block{
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     width: 450px;
-    height: 300px;
+    max-height: 300px;
+    height: fit-content;
     padding: 10px;
     background-color: #9c9c9cd8;
     position: absolute;
@@ -286,7 +299,14 @@ display: none;
     overflow: auto; /* Скрываем текст, который не помещается */
 }
 
-.year-block-open-btn{
+.disciplin-block{
+    flex-direction: column;
+}
+
+.block-open-btn{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     cursor: pointer;
     background-color: white;
     border: 1px solid black;
@@ -294,46 +314,36 @@ display: none;
     height: 40px;
 }
 
-.year-block-open-btn:hover{
+.block-open-btn:hover{
     background-color: rgb(153, 153, 153);
 }
 
-.year-block-conteiner-checkbox{
+
+.block-conteiner-checkbox{
     display: grid;
     grid-template-columns: repeat(8, 50px);
 }
 
-.year-block-checkbox{
+.year-block-conteiner-checkbox{
+    grid-template-columns: repeat(2, 150px);
+}
+
+
+.block-checkbox{
     display: inline-block;
     vertical-align: middle;
     height: 20px;
 }
 
-.year-block-label {
+.block-label {
     display: inline-block;
   vertical-align: middle;
 }
 
-.year-block-close-btn{
+.block-close-btn{
     width: 60px;
     height: 35px;
 }
-/* weight */
 
-.weight-block{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    width: 450px;
-    height: 230px;
-    padding: 10px;
-    background-color: #9c9c9cd8;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    margin-right: 10px;
-    white-space: wrap; /* Запрещаем перенос текста на новую строку */
-    overflow: auto; /* Скрываем текст, который не помещается */
-}
+
+

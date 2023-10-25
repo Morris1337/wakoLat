@@ -2,7 +2,13 @@
 
 function calendar(){
 
-            form.classList.add("formContent")
+            const postName = document.createElement("h2")
+            postName.textContent = "Kalendars"
+            postName.classList.add("flex-center")
+            form.appendChild(postName)
+
+            const calendarForm = document.createElement("form")
+            calendarForm.classList.add("formContent")
             const classWako = document.createElement("input")
             const date1 = document.createElement("input")
             const date2 = document.createElement("input")
@@ -39,18 +45,19 @@ function calendar(){
             promoter.placeholder = "Promoter"
             eMail.placeholder = "E-Mail"
             phone.placeholder = "Phone Number"
-
-            form.appendChild(classWako)
-            form.appendChild(date1)
-            form.appendChild(date2)
-            form.appendChild(name)
-            form.appendChild(country)
-            form.appendChild(venue)
-            form.appendChild(city)
-            form.appendChild(webAdress)
-            form.appendChild(promoter)
-            form.appendChild(eMail)
-            form.appendChild(phone)
+            
+            form.appendChild(calendarForm)
+            calendarForm.appendChild(classWako)
+            calendarForm.appendChild(date1)
+            calendarForm.appendChild(date2)
+            calendarForm.appendChild(name)
+            calendarForm.appendChild(country)
+            calendarForm.appendChild(venue)
+            calendarForm.appendChild(city)
+            calendarForm.appendChild(webAdress)
+            calendarForm.appendChild(promoter)
+            calendarForm.appendChild(eMail)
+            calendarForm.appendChild(phone)
 }
 
 export {calendar}
