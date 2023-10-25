@@ -1,7 +1,7 @@
 
 table {
     border-collapse: collapse;
-    width: 300px;
+    width: fit-content;
     margin: 0 auto;
 }
 th, td {
@@ -18,4 +18,13 @@ td {
 .selected {
     background-color: #007bff;
     color: #fff;
+}
+
+@media(max-width: 378px){
+    table{
+        width: 378px!important;
+    }
+    th{
+        width: 378px;
+    }
 }

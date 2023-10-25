@@ -1,6 +1,3 @@
-// import { form } from "./adminPanel.js";
-
-
 function competitionPost(){
 
             const postName = document.createElement("h2")
@@ -296,6 +293,10 @@ if (!isWeightBlockOpen) {
 const plusContainer = document.createElement("div");
 plusContainer.style.display = "flex";
 plusContainer.style.justifyContent = "center";
+
+if (window.innerWidth <= 375) {
+    plusContainer.style.width = "350px";
+}
 
 const newCategoryBlock = document.createElement("div");
 

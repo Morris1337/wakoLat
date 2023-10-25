@@ -6746,3 +6746,9 @@ del {
 .switch-wrap {
 	margin-bottom: 10px
 }
+
+.competition-category{
+	display: flex;
+	justify-content: center;
+	gap: 25px;
+}

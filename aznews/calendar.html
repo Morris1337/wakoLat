@@ -145,9 +145,8 @@
 
 
     <main>
-        <h1>Пример календаря</h1>
         <table>
-            <thead>
+            <div>
                 <tr>
                     <th colspan="11">Сентябрь 2023</th>
                 </tr>
@@ -164,47 +163,23 @@
                     <th>E-mail</th>
                     <th>Phone Number</th>
                 </tr>
-            </thead>
-            <tbody id="calendar-body">
-            </tbody>
+                <tr>
+                    <th>WAKO PANAMERICA</th>
+                    <th>7</th>
+                    <th>10</th>
+                    <th>WAKO Junior Pan-America Championships</th>
+                    <th>Brazil</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>-</th>
+                    <th>WAKO PANAMERICA paolo Zorelo</th>
+                    <th>cbkickboxing@gmail.com</th>
+                    <th>+5511991437672</th>
+                </tr>
+            </div>
+
         </table>
-        <script>
-            const calendarBody = document.getElementById("calendar-body");
-    
-            function createCalendar(year, month) {
-                const firstDay = new Date(year, month, 1);
-                const lastDay = new Date(year, month + 1, 0);
-                const daysInMonth = lastDay.getDate();
-    
-                let date = 1;
-                let html = "";
-    
-                for (let i = 0; i < 7; i++) { // Изменили количество строк на 7
-                    const row = document.createElement("tr");
-                    for (let j = 0; j < 11; j++) { // Изменили количество столбцов на 11
-                        if ((i === 0 && j < firstDay.getDay()) || date > daysInMonth) {
-                            row.innerHTML += "<td></td>";
-                        } else {
-                            row.innerHTML += `<td>${date}</td>`;
-                            date++;
-                        }
-                    }
-                    calendarBody.appendChild(row);
-                }
-            }
-    
-            createCalendar(2023, 8); // 8 = сентябрь (месяцы в JavaScript начинаются с 0)
-    
-            calendarBody.addEventListener("click", (e) => {
-                const selected = document.querySelector(".selected");
-                if (selected) {
-                    selected.classList.remove("selected");
-                }
-                if (e.target.tagName === "TD") {
-                    e.target.classList.add("selected");
-                }
-            });
-        </script>
+        
     </main>
 
     
