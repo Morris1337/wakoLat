@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap");
 
+table{
+	max-width: 900px;
+}
 .color1 {
 	background: #ffe7e6
 }
@@ -6746,9 +6749,39 @@ del {
 .switch-wrap {
 	margin-bottom: 10px
 }
-
-.competition-category{
+.competition-name{
 	display: flex;
 	justify-content: center;
-	gap: 25px;
+}
+.competition-top{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.competition-top-blocks{
+	display: flex;
+	justify-content: space-around;
+}
+.competition-top-vertical-line{
+	width: 1px; /* Ширина вертикальной линии */
+	background-color: black; /* Цвет линии */
+	height: 200px; /* Высота линии (может быть адаптирована по вашим потребностям) */
+}
+.competition-contry{
+	display: flex;
+	justify-content: flex-start;
+	gap: 15px;
+}
+
+.competition-footer{
+	display: grid;
+	grid-template-columns: repeat(4, 200px);
+}
+
+#application-form{
+	display: none;
+}
+
+#application-form.open{
+	display: block!important;
 }
