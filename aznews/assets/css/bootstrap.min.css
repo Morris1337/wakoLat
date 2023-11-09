@@ -10096,3 +10096,7 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }/*# sourceMappingURL=bootstrap.min.css.map */
+
+.note-btn{
+    width: 40px!important;
+}
