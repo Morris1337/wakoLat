@@ -298,9 +298,9 @@ if (window.innerWidth <= 375) {
     plusContainer.style.width = "350px";
 }
 
-const newCategoryBlock = document.createE000lement("div");
+const newCategoryBlock = document.createElement("div");
 
-function newCategory() {
+function newCategory(){ 
     const blockPlus = document.createElement("img");
     blockPlus.src = "assets/img/icon/plus-square.svg";
     blockPlus.classList.add("visual");
