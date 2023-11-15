@@ -47,16 +47,12 @@ function openForm(button, add){
         if(isClicked === newsPostBtn){
             newsPost()
             textarea()
-
-
         }else if(isClicked === competitionPostBtn){
             competitionPost()
             textarea()
-
         }else if(isClicked === seminarPostBtn){
             seminarPost()
-            textarea()
-            
+            textarea()       
         }else{
             calendar()
         }
@@ -65,3 +61,12 @@ function openForm(button, add){
 
 newsPost()
 textarea()
+
+const fontBtns = document.querySelectorAll(".dropdown-toggle")
+fontBtns.forEach((fontBtn) => {
+    if (fontBtns.length === 1) {
+      fontBtn.style.width = "100px"; // Обратите внимание на единицы измерения (например, пиксели)
+    } else {
+      fontBtns.style.width = "40px";
+    }
+  });

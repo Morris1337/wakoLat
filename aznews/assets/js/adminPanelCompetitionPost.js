@@ -298,7 +298,7 @@ if (window.innerWidth <= 375) {
     plusContainer.style.width = "350px";
 }
 
-const newCategoryBlock = document.createElement("div");
+const newCategoryBlock = document.createE000lement("div");
 
 function newCategory() {
     const blockPlus = document.createElement("img");
