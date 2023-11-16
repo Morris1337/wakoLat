@@ -374,3 +374,8 @@ display: none;
     width: 100px!important;
 } */
 
+button[aria-label="Font Family"]{
+    min-width: 50px !important;
+    width: fit-content !important;
+}
+

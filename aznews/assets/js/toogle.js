@@ -9,13 +9,7 @@ function toggle(getButton, getElement) {
     }
 }
 
-// const menuContent = document.querySelector(".admin-menu-section")
-// const iconToOpen = document.querySelector(".admin-menu-phone")
-// const buttonPosition = document.querySelector(".admin-menu-icon-phone-block")
-// const iconBtn = document.querySelector(".admin-menu-icon-phone-block")
-//competition-detals
-// const applyForAccess = document.querySelector("#apply-for-access")
-// const applicationForm = document.querySelector("#application-form")
+
 
 toggle(".admin-menu-icon-phone-block", ".admin-menu-section")
 toggle(".admin-menu-icon-phone-block", ".admin-menu-phone")
