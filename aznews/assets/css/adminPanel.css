@@ -352,30 +352,4 @@ display: none;
     width: 40px!important;
 }
 
-/* summernote */
-
-.note-editor .note-toolbar .note-color-palette div .note-color-btn{
-    width: 20px!important;
-}
-
-.btn-sm {
-    padding: 5px 10px;
-    font-size: 12px!important;
-    line-height: 1.5!important;
-    border-radius: 3px!important;
-}
-
-.note-popover .popover-content .note-color .dropdown-toggle, .note-editor .note-toolbar .note-color .dropdown-toggle {
-    width: 20px!important;
-    padding-left: 5px;
-}
-
-/* .dropdown-toggle{
-    width: 100px!important;
-} */
-
-button[aria-label="Font Family"]{
-    min-width: 50px !important;
-    width: fit-content !important;
-}
 
