@@ -109,6 +109,16 @@ form{
         width: 300px!important;
     }
 
+    .note-editor{
+        margin-top: 10px;
+        width: 291px;
+        margin-left: 50px;
+    }
+
+    .note-editable{
+        height: 200px;
+    }
+
     .admin-menu{
         width: 240px;
         height: 100vh;
@@ -136,7 +146,7 @@ form{
     .admin-menu-section.open{
         display: flex;
     }
-    
+
     .admin-menu-icon-phone-block{
         position: fixed;
         height: 100vh;
@@ -148,7 +158,7 @@ form{
         justify-content: flex-end;
         align-items: center;
         border-radius: 42px;
-        
+
     }
 
     .admin-menu-icon-phone-block.open{
@@ -172,7 +182,7 @@ form{
         flex-direction: column;
         margin-top: 15px;
     }
-    
+
     #form{
         position: absolute;
         z-index: 5;
@@ -197,9 +207,9 @@ form{
         border-bottom: 15px solid white; /* Цвет заливки треугольника */
         transform: rotate(90deg); /* Поворачивает треугольник на 90 градусов */
         margin: 5px;
-    }      
-      
-      
+    }
+
+
 }
 
 .custom-file-upload {
@@ -352,4 +362,30 @@ display: none;
     width: 40px!important;
 }
 
+/* summernote */
+
+.note-editor .note-toolbar .note-color-palette div .note-color-btn{
+    width: 20px!important;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px!important;
+    line-height: 1.5!important;
+    border-radius: 3px!important;
+}
+
+.note-popover .popover-content .note-color .dropdown-toggle, .note-editor .note-toolbar .note-color .dropdown-toggle {
+    width: 20px!important;
+    padding-left: 5px;
+}
+
+/* .dropdown-toggle{
+    width: 100px!important;
+} */
+
+button[aria-label="Font Family"]{
+    min-width: 50px !important;
+    width: fit-content !important;
+}
 

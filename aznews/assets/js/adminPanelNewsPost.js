@@ -1,5 +1,3 @@
-
-
 function newsPost(){
     const postName = document.createElement("h2")
     postName.textContent = "Jauna publikacija"

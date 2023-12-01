@@ -6,9 +6,9 @@ function competitionPost(){
             form.appendChild(postName)
 
             const competitionForm = document.createElement("form")
-                
+
             competitionForm.classList.add("formContent")
-            
+
             const file = document.createElement("input")
             const name = document.createElement("input")
             const country = document.createElement("input")
@@ -73,61 +73,61 @@ btnDisciplin.textContent = "Disciplina";
 if (!isDisciplinBlockOpen) {
     btnDisciplin.addEventListener("click", (event) => {
         event.preventDefault();
-        const disciplinBlock = document.createElement("div");
-        disciplinBlock.classList.add("disciplin-block");
-        disciplinBlock.classList.add("competition-open-block");
-        competitionCategory.appendChild(disciplinBlock);
-
-        const btnCloseDisciplin = document.createElement("button");
-        const conteinerCloseBtn = document.createElement("div");
-        disciplinBlock.appendChild(conteinerCloseBtn);
-
-        btnCloseDisciplin.classList.add("year-block-close-btn");
-        btnCloseDisciplin.classList.add("block-close-btn");
-        btnCloseDisciplin.textContent = "Ok";
-        btnCloseDisciplin.addEventListener("click", (event) => {
-            event.preventDefault();
-            disciplinBlock.remove();
-            isDisciplinBlockOpen = false;
-            btnDisciplin.disabled = false;
-        });
-        isDisciplinBlockOpen = true;
-
-        const conteinerCheckbox = document.createElement("div");
-        conteinerCheckbox.classList.add("block-conteiner-checkbox");
-        conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
-        disciplinBlock.appendChild(conteinerCheckbox);
-
-        function addDisciplin(discipline) {
-            const checkBox = document.createElement("input");
-            checkBox.classList.add("year-block-checkbox");
-            checkBox.classList.add("block-checkbox");
-            checkBox.type = "checkbox";
-            checkBox.id = `checkbox${discipline}`;
-            checkBox.name = "yearCheckbox";
-            checkBox.value = discipline;
-            conteinerCheckbox.appendChild(checkBox);
-
-            const label = document.createElement("label");
-            label.classList.add("discipline-block-label");
-            label.classList.add("block-label");
-            label.setAttribute("for", `checkbox${discipline}`);
-            label.textContent = `${discipline}`;
-            conteinerCheckbox.appendChild(label);
-        }
-        const allDiscipline = [
-            "Disciplines",
-            "Light contact(LC)",
-            "Kick light(KL)",
-            "Point fighting(PF)",
-            "Low kick (LK)",
-            "Full contact (FC)",
-            "K1 style"
-        ];
-        for (let discipline = 1; discipline <= allDiscipline.length; discipline++) {
-            addDisciplin(allDiscipline[discipline]);
-        }
-        disciplinBlock.appendChild(btnCloseDisciplin);
+        // const disciplinBlock = document.createElement("div");
+        // disciplinBlock.classList.add("disciplin-block");
+        // disciplinBlock.classList.add("competition-open-block");
+        // competitionCategory.appendChild(disciplinBlock);
+        //
+        // const btnCloseDisciplin = document.createElement("button");
+        // const conteinerCloseBtn = document.createElement("div");
+        // disciplinBlock.appendChild(conteinerCloseBtn);
+        //
+        // btnCloseDisciplin.classList.add("year-block-close-btn");
+        // btnCloseDisciplin.classList.add("block-close-btn");
+        // btnCloseDisciplin.textContent = "Ok";
+        // btnCloseDisciplin.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     disciplinBlock.remove();
+        //     isDisciplinBlockOpen = false;
+        //     btnDisciplin.disabled = false;
+        // });
+        // isDisciplinBlockOpen = true;
+        //
+        // const conteinerCheckbox = document.createElement("div");
+        // conteinerCheckbox.classList.add("block-conteiner-checkbox");
+        // conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
+        // disciplinBlock.appendChild(conteinerCheckbox);
+        //
+        // function addDisciplin(discipline) {
+        //     const checkBox = document.createElement("input");
+        //     checkBox.classList.add("year-block-checkbox");
+        //     checkBox.classList.add("block-checkbox");
+        //     checkBox.type = "checkbox";
+        //     checkBox.id = `checkbox${discipline}`;
+        //     checkBox.name = "yearCheckbox";
+        //     checkBox.value = discipline;
+        //     conteinerCheckbox.appendChild(checkBox);
+        //
+        //     const label = document.createElement("label");
+        //     label.classList.add("discipline-block-label");
+        //     label.classList.add("block-label");
+        //     label.setAttribute("for", `checkbox${discipline}`);
+        //     label.textContent = `${discipline}`;
+        //     conteinerCheckbox.appendChild(label);
+        // }
+        // const allDiscipline = [
+        //     "Disciplines",
+        //     "Light contact(LC)",
+        //     "Kick light(KL)",
+        //     "Point fighting(PF)",
+        //     "Low kick (LK)",
+        //     "Full contact (FC)",
+        //     "K1 style"
+        // ];
+        // for (let discipline = 1; discipline <= allDiscipline.length; discipline++) {
+        //     addDisciplin(allDiscipline[discipline]);
+        // }
+        // disciplinBlock.appendChild(btnCloseDisciplin);
     });
 }
 
@@ -300,7 +300,7 @@ if (window.innerWidth <= 375) {
 
 const newCategoryBlock = document.createElement("div");
 
-function newCategory() {
+function newCategory(){
     const blockPlus = document.createElement("img");
     blockPlus.src = "assets/img/icon/plus-square.svg";
     blockPlus.classList.add("visual");
