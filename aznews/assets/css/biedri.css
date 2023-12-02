@@ -47,5 +47,62 @@ main{
     width: 160px;
 }
 
+.img-logo{
+    width: 100px;
+}
+.img-flag{
 
+    height: 192px;
+}
+
+.img-flag.leftmin40{
+    margin-left: -40px;
+}
+
+.flip-container {
+    perspective: 1000;
+    }
+     
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+    }
+     
+    .flip-container, .front, .back {
+    /* width: 320px; */
+    /* height: 480px; */
+    }
+    .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+     
+    position: relative;
+    }
+    .front, .back {
+    backface-visibility: hidden;
+     
+    position: absolute;
+    top: 0;
+    left: 0;
+    }
+    .front {
+        width: 192px;
+        overflow: hidden;
+        z-index: 2;
+    }
+    .back {
+    transform: rotateY(180deg);
+    width: 192px;
+    height: 192px;
+    }
+
+    .back.favorit{
+        background-color: white;
+    }
   
+    .about-club{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
