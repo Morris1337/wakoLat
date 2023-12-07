@@ -1,13 +1,13 @@
-import {competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight} from "./adminPanelCompetitionPost.js"
+import { competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight } from "./adminPanelCompetitionPost.js";
 
 // disciplin
 
 let isDisciplinBlockOpen = false;
 
-export function btnDisciplinClick(event){
+export function btnDisciplinClick(event) {
     event.preventDefault();
     if (isDisciplinBlockOpen) {
-        return
+        return;
     }
     const disciplinBlock = document.createElement("div");
     disciplinBlock.classList.add("disciplin-block");
@@ -60,79 +60,77 @@ export function btnDisciplinClick(event){
         "Full contact (FC)",
         "K1 style"
     ];
-    for (let discipline = 1; discipline <= allDiscipline.length; discipline++) {
+    for (let discipline = 1; discipline < allDiscipline.length; discipline++) {
         addDisciplin(allDiscipline[discipline]);
     }
     disciplinBlock.appendChild(btnCloseDisciplin);
-
 }
-
 
 // Year
 
 let isYearBlockOpen = false;
-export function btnYearClick(event){
+export function btnYearClick(event) {
     event.preventDefault();
     if (isYearBlockOpen) {
-        return
+        return;
     }
-        const yearBlock = document.createElement("div");
-        yearBlock.classList.add("year-block");
-        yearBlock.classList.add("competition-open-block");
-        document.body.appendChild(yearBlock);
+    const yearBlock = document.createElement("div");
+    yearBlock.classList.add("year-block");
+    yearBlock.classList.add("competition-open-block");
+    document.body.appendChild(yearBlock);
 
-        const btnCloseYear = document.createElement("button");
-        const conteinesCloseBtn = document.createElement("div");
-        yearBlock.appendChild(conteinesCloseBtn);
+    const btnCloseYear = document.createElement("button");
+    const conteinesCloseBtn = document.createElement("div");
+    yearBlock.appendChild(conteinesCloseBtn);
 
-        btnCloseYear.classList.add("block-close-btn");
-        btnCloseYear.classList.add("year-block-close-btn");
-        btnCloseYear.textContent = "Ok";
-        btnCloseYear.addEventListener("click", (event) => {
-            event.preventDefault();
-            yearBlock.remove();
-            isYearBlockOpen = false;
-            btnYear.disabled = false;
-        });
-        isYearBlockOpen = true;
-        btnYear.disabled = true;
+    btnCloseYear.classList.add("block-close-btn");
+    btnCloseYear.classList.add("year-block-close-btn");
+    btnCloseYear.textContent = "Ok";
+    btnCloseYear.addEventListener("click", (event) => {
+        event.preventDefault();
+        yearBlock.remove();
+        isYearBlockOpen = false;
+        btnYear.disabled = false;
+    });
+    isYearBlockOpen = true;
+    btnYear.disabled = true;
 
-        const conteinerCheckbox = document.createElement("div");
-        conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
-        conteinerCheckbox.classList.add("block-conteiner-checkbox");
-        yearBlock.appendChild(conteinerCheckbox);
+    const conteinerCheckbox = document.createElement("div");
+    conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
+    conteinerCheckbox.classList.add("block-conteiner-checkbox");
+    yearBlock.appendChild(conteinerCheckbox);
 
-        function addYear(year) {
-            const checkBox = document.createElement("input");
-            checkBox.classList.add("year-block-checkbox");
-            checkBox.classList.add("block-checkbox");
-            checkBox.type = "checkbox";
-            checkBox.id = `checkbox${year}`;
-            checkBox.name = "yearCheckbox";
-            checkBox.value = year;
-            conteinerCheckbox.appendChild(checkBox);
+    function addYear(year) {
+        const checkBox = document.createElement("input");
+        checkBox.classList.add("year-block-checkbox");
+        checkBox.classList.add("block-checkbox");
+        checkBox.type = "checkbox";
+        checkBox.id = `checkbox${year}`;
+        checkBox.name = "yearCheckbox";
+        checkBox.value = year;
+        conteinerCheckbox.appendChild(checkBox);
 
-            const label = document.createElement("label");
-            label.classList.add("year-block-label");
-            label.classList.add("block-label");
-            label.setAttribute("for", `checkbox${year}`);
-            label.textContent = `${year}`;
-            conteinerCheckbox.appendChild(label);
-        }
-        const currentYear = new Date().getFullYear();
-        for (let year = 1980; year <= currentYear; year++) {
-            addYear(year);
-        }
-        conteinesCloseBtn.appendChild(btnCloseYear);
+        const label = document.createElement("label");
+        label.classList.add("year-block-label");
+        label.classList.add("block-label");
+        label.setAttribute("for", `checkbox${year}`);
+        label.textContent = `${year}`;
+        conteinerCheckbox.appendChild(label);
+    }
+    const currentYear = new Date().getFullYear();
+    for (let year = 1980; year <= currentYear; year++) {
+        addYear(year);
+    }
+    conteinesCloseBtn.appendChild(btnCloseYear);
 }
 
 // Weight
 
 let isWeightBlockOpen = false;
-export function btnWeightClick(event){
+export function btnWeightClick(event) {
     event.preventDefault();
     if (isWeightBlockOpen) {
-    return
+        return;
     }
     const weightBlock = document.createElement("div");
     weightBlock.classList.add("weight-block");
@@ -151,7 +149,7 @@ export function btnWeightClick(event){
         isWeightBlockOpen = false;
         btnWeight.disabled = false;
     });
-    isYearBlockOpen = true;
+    isWeightBlockOpen = true;
     btnWeight.disabled = true;
 
     const containerCheckbox = document.createElement("div");
@@ -177,7 +175,7 @@ export function btnWeightClick(event){
         containerCheckbox.appendChild(label);
     }
     const defaultWeight = 100;
-    for (let weight = 10; weight <= defaultWeight; weight += 5) {
+    for (let weight = 10; weight < defaultWeight; weight += 5) {
         addWeight(weight);
     }
     weightCloseContainer.appendChild(btnCloseWeight);

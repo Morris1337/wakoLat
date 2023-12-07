@@ -1,3 +1,11 @@
+import { btnDisciplinClick, btnWeightClick, btnYearClick } from "./adminPanelCompetitionPostFunctions.js"
+
+const competitionCategory = document.createElement("form");
+const btnDisciplin = document.createElement("button");
+const btnYear = document.createElement("button");
+const personWeight = document.createElement("div");
+const btnWeight = document.createElement("input");
+
 function competitionPost(){
 
             const postName = document.createElement("h2")
@@ -45,7 +53,7 @@ function competitionPost(){
             competitionForm.appendChild(date)
 
 // Sex
-const competitionCategory = document.createElement("form");
+
 competitionCategory.classList.add("formContent");
 
 const sex = document.createElement("select");
@@ -64,7 +72,6 @@ optionFemale.value = "female";
 // disciplin
 let isDisciplinBlockOpen = false;
 
-const btnDisciplin = document.createElement("button");
 btnDisciplin.classList.add("visual");
 btnDisciplin.classList.add("block-open-btn");
 btnDisciplin.classList.add("disciplin-block-open-btn");
@@ -73,68 +80,13 @@ btnDisciplin.textContent = "Disciplina";
 if (!isDisciplinBlockOpen) {
     btnDisciplin.addEventListener("click", (event) => {
         event.preventDefault();
-        // const disciplinBlock = document.createElement("div");
-        // disciplinBlock.classList.add("disciplin-block");
-        // disciplinBlock.classList.add("competition-open-block");
-        // competitionCategory.appendChild(disciplinBlock);
-        //
-        // const btnCloseDisciplin = document.createElement("button");
-        // const conteinerCloseBtn = document.createElement("div");
-        // disciplinBlock.appendChild(conteinerCloseBtn);
-        //
-        // btnCloseDisciplin.classList.add("year-block-close-btn");
-        // btnCloseDisciplin.classList.add("block-close-btn");
-        // btnCloseDisciplin.textContent = "Ok";
-        // btnCloseDisciplin.addEventListener("click", (event) => {
-        //     event.preventDefault();
-        //     disciplinBlock.remove();
-        //     isDisciplinBlockOpen = false;
-        //     btnDisciplin.disabled = false;
-        // });
-        // isDisciplinBlockOpen = true;
-        //
-        // const conteinerCheckbox = document.createElement("div");
-        // conteinerCheckbox.classList.add("block-conteiner-checkbox");
-        // conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
-        // disciplinBlock.appendChild(conteinerCheckbox);
-        //
-        // function addDisciplin(discipline) {
-        //     const checkBox = document.createElement("input");
-        //     checkBox.classList.add("year-block-checkbox");
-        //     checkBox.classList.add("block-checkbox");
-        //     checkBox.type = "checkbox";
-        //     checkBox.id = `checkbox${discipline}`;
-        //     checkBox.name = "yearCheckbox";
-        //     checkBox.value = discipline;
-        //     conteinerCheckbox.appendChild(checkBox);
-        //
-        //     const label = document.createElement("label");
-        //     label.classList.add("discipline-block-label");
-        //     label.classList.add("block-label");
-        //     label.setAttribute("for", `checkbox${discipline}`);
-        //     label.textContent = `${discipline}`;
-        //     conteinerCheckbox.appendChild(label);
-        // }
-        // const allDiscipline = [
-        //     "Disciplines",
-        //     "Light contact(LC)",
-        //     "Kick light(KL)",
-        //     "Point fighting(PF)",
-        //     "Low kick (LK)",
-        //     "Full contact (FC)",
-        //     "K1 style"
-        // ];
-        // for (let discipline = 1; discipline <= allDiscipline.length; discipline++) {
-        //     addDisciplin(allDiscipline[discipline]);
-        // }
-        // disciplinBlock.appendChild(btnCloseDisciplin);
+        btnDisciplinClick(event)
     });
 }
 
 // Year
 let isYearBlockOpen = false;
 
-const btnYear = document.createElement("button");
 btnYear.classList.add("visual");
 btnYear.classList.add("year-block-open-btn");
 btnYear.classList.add("block-open-btn");
@@ -143,54 +95,7 @@ btnYear.textContent = "gads";
 if (!isYearBlockOpen) {
     btnYear.addEventListener("click", (event) => {
         event.preventDefault();
-        const yearBlock = document.createElement("div");
-        yearBlock.classList.add("year-block");
-        yearBlock.classList.add("competition-open-block");
-        document.body.appendChild(yearBlock);
-
-        const btnCloseYear = document.createElement("button");
-        const conteinesCloseBtn = document.createElement("div");
-        yearBlock.appendChild(conteinesCloseBtn);
-
-        btnCloseYear.classList.add("block-close-btn");
-        btnCloseYear.classList.add("year-block-close-btn");
-        btnCloseYear.textContent = "Ok";
-        btnCloseYear.addEventListener("click", (event) => {
-            event.preventDefault();
-            yearBlock.remove();
-            isYearBlockOpen = false;
-            btnYear.disabled = false;
-        });
-        isYearBlockOpen = true;
-        btnYear.disabled = true;
-
-        const conteinerCheckbox = document.createElement("div");
-        conteinerCheckbox.classList.add("year-block-conteiner-checkbox");
-        conteinerCheckbox.classList.add("block-conteiner-checkbox");
-        yearBlock.appendChild(conteinerCheckbox);
-
-        function addYear(year) {
-            const checkBox = document.createElement("input");
-            checkBox.classList.add("year-block-checkbox");
-            checkBox.classList.add("block-checkbox");
-            checkBox.type = "checkbox";
-            checkBox.id = `checkbox${year}`;
-            checkBox.name = "yearCheckbox";
-            checkBox.value = year;
-            conteinerCheckbox.appendChild(checkBox);
-
-            const label = document.createElement("label");
-            label.classList.add("year-block-label");
-            label.classList.add("block-label");
-            label.setAttribute("for", `checkbox${year}`);
-            label.textContent = `${year}`;
-            conteinerCheckbox.appendChild(label);
-        }
-        const currentYear = new Date().getFullYear();
-        for (let year = 1980; year <= currentYear; year++) {
-            addYear(year);
-        }
-        conteinesCloseBtn.appendChild(btnCloseYear);
+        btnYearClick(event)
     });
 }
 
@@ -227,65 +132,17 @@ roundLength.appendChild(roundLengthSelect);
 // Weight
 let isWeightBlockOpen = false;
 
-const personWeight = document.createElement("div");
-const btnWeight = document.createElement("input");
 btnWeight.type = "button"
 btnWeight.value = "Sportistu svars";
 btnWeight.classList.add("visual");
 btnWeight.classList.add("block-open-btn");
-btnWeight.classList.add("year-block-open-btn");
+btnWeight.classList.add("weight-block-open-btn");
 personWeight.appendChild(btnWeight);
 
 if (!isWeightBlockOpen) {
     btnWeight.addEventListener("click", (event) => {
         event.preventDefault();
-        const weightBlock = document.createElement("div");
-        weightBlock.classList.add("weight-block");
-        weightBlock.classList.add("competition-open-block");
-        personWeight.appendChild(weightBlock);
-
-        const btnCloseWeight = document.createElement("button");
-        const weightCloseContainer = document.createElement("div");
-        weightBlock.appendChild(weightCloseContainer);
-        btnCloseWeight.classList.add("block-close-btn");
-        btnCloseWeight.classList.add("year-block-close-btn");
-        btnCloseWeight.textContent = "Ok";
-        btnCloseWeight.addEventListener("click", (event) => {
-            event.preventDefault();
-            weightBlock.remove();
-            isWeightBlockOpen = false;
-            btnWeight.disabled = false;
-        });
-        isYearBlockOpen = true;
-        btnWeight.disabled = true;
-
-        const containerCheckbox = document.createElement("div");
-        containerCheckbox.classList.add("block-conteiner-checkbox");
-        containerCheckbox.classList.add("year-block-conteiner-checkbox");
-        weightBlock.appendChild(containerCheckbox);
-
-        function addWeight(weight) {
-            const checkBox = document.createElement("input");
-            checkBox.classList.add("weight-block-checkbox");
-            checkBox.classList.add("block-checkbox");
-            checkBox.type = "checkbox";
-            checkBox.id = `checkbox${weight}`;
-            checkBox.name = "weightCheckbox";
-            checkBox.value = weight;
-            containerCheckbox.appendChild(checkBox);
-
-            const label = document.createElement("label");
-            label.classList.add("weight-block-label");
-            label.classList.add("block-label");
-            label.setAttribute("for", `checkbox${weight}`);
-            label.textContent = `${weight} KG`;
-            containerCheckbox.appendChild(label);
-        }
-        const defaultWeight = 100;
-        for (let weight = 10; weight <= defaultWeight; weight += 5) {
-            addWeight(weight);
-        }
-        weightCloseContainer.appendChild(btnCloseWeight);
+        btnWeightClick(event)
     });
 }
 
@@ -309,6 +166,18 @@ function newCategory(){
 
     blockPlus.addEventListener("click", () => {
         const clonedCategory = competitionCategory.cloneNode(true);
+        const newDisciplineBtn = clonedCategory.querySelector(".disciplin-block-open-btn")
+        newDisciplineBtn.addEventListener("click", (event)=>{
+            btnDisciplinClick(event)
+        })
+        const newYearBtn = clonedCategory.querySelector(".year-block-open-btn")
+        newYearBtn.addEventListener("click", (event)=>{
+            btnYearClick(event)
+        })
+        const newWeightBtn = clonedCategory.querySelector(".weight-block-open-btn")
+        newWeightBtn.addEventListener("click", (event)=>{
+            btnWeightClick(event)
+        })
         newCategoryBlock.appendChild(clonedCategory);
     });
 
@@ -337,4 +206,4 @@ form.appendChild(plusContainer);
 }
 
 
-export {competitionPost}
+export {competitionPost, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
