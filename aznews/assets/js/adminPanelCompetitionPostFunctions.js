@@ -1,4 +1,4 @@
-import { competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight } from "./adminPanelCompetitionPost.js";
+import { competitionCategory, personYear, personDisciplin, btnDisciplin, btnYear, personWeight, btnWeight } from "./adminPanelCompetitionPost.js";
 
 // disciplin
 
@@ -12,7 +12,7 @@ export function btnDisciplinClick(event) {
     const disciplinBlock = document.createElement("div");
     disciplinBlock.classList.add("disciplin-block");
     disciplinBlock.classList.add("competition-open-block");
-    competitionCategory.appendChild(disciplinBlock);
+    personDisciplin.appendChild(disciplinBlock);
 
     const btnCloseDisciplin = document.createElement("button");
     const conteinerCloseBtn = document.createElement("div");
@@ -77,7 +77,7 @@ export function btnYearClick(event) {
     const yearBlock = document.createElement("div");
     yearBlock.classList.add("year-block");
     yearBlock.classList.add("competition-open-block");
-    document.body.appendChild(yearBlock);
+    personYear.appendChild(yearBlock);
 
     const btnCloseYear = document.createElement("button");
     const conteinesCloseBtn = document.createElement("div");
@@ -85,7 +85,7 @@ export function btnYearClick(event) {
 
     btnCloseYear.classList.add("block-close-btn");
     btnCloseYear.classList.add("year-block-close-btn");
-    btnCloseYear.textContent = "Ok";
+    btnCloseYear.textContent = "Ok"; 
     btnCloseYear.addEventListener("click", (event) => {
         event.preventDefault();
         yearBlock.remove();

@@ -1,10 +1,12 @@
 import { btnDisciplinClick, btnWeightClick, btnYearClick } from "./adminPanelCompetitionPostFunctions.js"
 
 const competitionCategory = document.createElement("form");
+const personDisciplin = document.createElement("div");
 const btnDisciplin = document.createElement("button");
+const personYear = document.createElement("div");
 const btnYear = document.createElement("button");
 const personWeight = document.createElement("div");
-const btnWeight = document.createElement("input");
+const btnWeight = document.createElement("button");
 
 function competitionPost(){
 
@@ -52,22 +54,34 @@ function competitionPost(){
             competitionForm.appendChild(phone)
             competitionForm.appendChild(date)
 
+            let sexOpened = document.getElementById("sexId");
+
 // Sex
 
 competitionCategory.classList.add("formContent");
 
-const sex = document.createElement("select");
-sex.classList.add("visual");
+if(!sexOpened){
+    const sex = document.createElement("div")
+    sex.setAttribute("id", "sexId")
+    const sexSelect = document.createElement("select");
+    sexSelect.classList.add("visual");
+    
+    const optionSex = document.createElement("option");
+    optionSex.text = "Dzimums";
+    optionSex.value = "choice";
+    const optionMale = document.createElement("option");
+    optionMale.text = "Virietis";
+    optionMale.value = "male";
+    const optionFemale = document.createElement("option");
+    optionFemale.text = "Sieviete";
+    optionFemale.value = "female";
+    sexSelect.appendChild(optionSex);
+    sexSelect.appendChild(optionMale);
+    sexSelect.appendChild(optionFemale);
+    sex.appendChild(sexSelect);
+    competitionCategory.appendChild(sex);
+}
 
-const optionSex = document.createElement("option");
-optionSex.text = "Dzimums";
-optionSex.value = "choise";
-const optionMale = document.createElement("option");
-optionMale.text = "Virietis";
-optionMale.value = "male";
-const optionFemale = document.createElement("option");
-optionFemale.text = "Sieviete";
-optionFemale.value = "female";
 
 // disciplin
 let isDisciplinBlockOpen = false;
@@ -76,6 +90,7 @@ btnDisciplin.classList.add("visual");
 btnDisciplin.classList.add("block-open-btn");
 btnDisciplin.classList.add("disciplin-block-open-btn");
 btnDisciplin.textContent = "Disciplina";
+personDisciplin.appendChild(btnDisciplin);
 
 if (!isDisciplinBlockOpen) {
     btnDisciplin.addEventListener("click", (event) => {
@@ -91,6 +106,7 @@ btnYear.classList.add("visual");
 btnYear.classList.add("year-block-open-btn");
 btnYear.classList.add("block-open-btn");
 btnYear.textContent = "gads";
+personYear.appendChild(btnYear);
 
 if (!isYearBlockOpen) {
     btnYear.addEventListener("click", (event) => {
@@ -115,6 +131,7 @@ for (let i = 0; i < optionAmount.length; i++) {
 roundAmount.appendChild(roundSelect);
 
 // Round length
+
 const roundLength = document.createElement("div");
 const roundLengthSelect = document.createElement("select");
 roundLengthSelect.classList.add("visual");
@@ -132,7 +149,7 @@ roundLength.appendChild(roundLengthSelect);
 // Weight
 let isWeightBlockOpen = false;
 
-btnWeight.type = "button"
+btnWeight.textContent = "Sportistu svars"
 btnWeight.value = "Sportistu svars";
 btnWeight.classList.add("visual");
 btnWeight.classList.add("block-open-btn");
@@ -145,6 +162,7 @@ if (!isWeightBlockOpen) {
         btnWeightClick(event)
     });
 }
+
 
 // clone container
 const plusContainer = document.createElement("div");
@@ -165,6 +183,10 @@ function newCategory(){
     blockPlus.style.width = "30px";
 
     blockPlus.addEventListener("click", () => {
+        // Очищаем блок перед добавлением новых элементов
+        while (newCategoryBlock.firstChild) {
+            newCategoryBlock.removeChild(newCategoryBlock.firstChild);
+        }
         const clonedCategory = competitionCategory.cloneNode(true);
         const newDisciplineBtn = clonedCategory.querySelector(".disciplin-block-open-btn")
         newDisciplineBtn.addEventListener("click", (event)=>{
@@ -186,13 +208,10 @@ function newCategory(){
 
 const categoryPlus = newCategory();
 
+
 form.appendChild(competitionCategory);
-competitionCategory.appendChild(sex);
-sex.appendChild(optionSex);
-sex.appendChild(optionMale);
-sex.appendChild(optionFemale);
-competitionCategory.appendChild(btnDisciplin);
-competitionCategory.appendChild(btnYear);
+competitionCategory.appendChild(personDisciplin);
+competitionCategory.appendChild(personYear);
 competitionCategory.appendChild(roundAmount);
 competitionCategory.appendChild(roundLength);
 competitionCategory.appendChild(personWeight);
@@ -201,9 +220,7 @@ form.appendChild(newCategoryBlock);
 form.appendChild(plusContainer);
 
 
-
-
 }
 
 
-export {competitionPost, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
+export {competitionPost, personYear, personDisciplin, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}

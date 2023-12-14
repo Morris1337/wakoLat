@@ -41,7 +41,7 @@ function openForm(button, add) {
         form.classList.add("formContent");
         add.appendChild(form);
 
-        let isClicked = button
+        let isClicked = button;
 
         if (isClicked === newsPostBtn) {
             newsPost()
