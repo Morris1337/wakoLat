@@ -1,5 +1,40 @@
 import { competitionCategory, personYear, personDisciplin, btnDisciplin, btnYear, personWeight, btnWeight } from "./adminPanelCompetitionPost.js";
 
+// Sex
+
+
+
+export function sex() {
+
+    const existingElement = document.getElementById("sexId");
+
+    if (!existingElement) {
+        const sex = document.createElement("div");
+        sex.setAttribute("id", "sexId");
+        const sexSelect = document.createElement("select");
+        sexSelect.classList.add("visual");
+
+        const optionSex = document.createElement("option");
+        optionSex.text = "Dzimums"; 
+        optionSex.value = "choice";
+        const optionMale = document.createElement("option");
+        optionMale.text = "Virietis"; 
+        optionMale.value = "male";
+        const optionFemale = document.createElement("option");
+        optionFemale.text = "Sieviete"; 
+        optionFemale.value = "female";
+
+        sexSelect.appendChild(optionSex);
+        sexSelect.appendChild(optionMale);
+        sexSelect.appendChild(optionFemale);
+        sex.appendChild(sexSelect);
+
+       
+        competitionCategory.appendChild(sex);
+    }
+}
+
+
 // disciplin
 
 let isDisciplinBlockOpen = false;
