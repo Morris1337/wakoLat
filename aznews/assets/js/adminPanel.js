@@ -1,4 +1,4 @@
-import {competitionPost} from "./adminPanelCompetitionPost.js";
+import {competitionPost, category} from "./adminPanelCompetitionPost.js";
 import {newsPost} from "./adminPanelNewsPost.js";
 import {textarea} from "./adminPanelTextarea.js";
 import {seminarPost} from "./adminPanelSeminarPost.js";
@@ -12,6 +12,8 @@ const addFormNews = document.getElementById("form")
 
 
 const textElements = document.querySelectorAll(".text");
+
+let isFirstRender = true;
 
 textElements.forEach(function (textElement) {
     textElement.addEventListener('input', function () {
@@ -48,6 +50,8 @@ function openForm(button, add) {
             textarea()
         } else if (isClicked === competitionPostBtn) {
             competitionPost()
+            category(isFirstRender)
+            isFirstRender = false;
             textarea()
         } else if (isClicked === seminarPostBtn) {
             seminarPost()

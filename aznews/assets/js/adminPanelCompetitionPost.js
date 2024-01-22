@@ -53,9 +53,13 @@ function competitionPost(){
             competitionForm.appendChild(eMail)
             competitionForm.appendChild(phone)
             competitionForm.appendChild(date)
+}
 
+function category(isFirstRender){
 // Sex
-
+if(isFirstRender === false){
+    return 
+}
 competitionCategory.classList.add("formContent");
 
 sex()
@@ -200,4 +204,4 @@ form.appendChild(plusContainer);
 }
 
 
-export {competitionPost, personYear, personDisciplin, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
+export {competitionPost, category, personYear, personDisciplin, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
