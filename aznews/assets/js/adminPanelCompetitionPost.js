@@ -25,7 +25,8 @@ function competitionPost(){
             const city = document.createElement("input")
             const eMail = document.createElement("input")
             const phone = document.createElement("input")
-            const date = document.createElement("input")
+            const dateStart = document.createElement("input")
+            const dateEnd = document.createElement("input")
 
             name.classList.add("visual")
             file.classList.add("visual")
@@ -34,16 +35,18 @@ function competitionPost(){
             city.classList.add("visual")
             eMail.classList.add("visual")
             phone.classList.add("visual")
-            date.classList.add("visual")
+            dateStart.classList.add("visual")
+            dateEnd.classList.add("visual")
 
             name.type = "text";
             name.placeholder = "Virsraksts";
-            file.type = "file"
-            country.placeholder = "Country"
-            city.placeholder = "City"
-            eMail.placeholder = "E-Mail"
-            phone.placeholder = "Phone Number"
-            date.type = "date";
+            file.type = "file";
+            country.placeholder = "Country";
+            city.placeholder = "City";
+            eMail.placeholder = "E-Mail";
+            phone.placeholder = "Phone Number";
+            dateStart.type = "date";
+            dateEnd.type = "date";
 
             form.appendChild(competitionForm)
             competitionForm.appendChild(name)
@@ -52,15 +55,38 @@ function competitionPost(){
             competitionForm.appendChild(city)
             competitionForm.appendChild(eMail)
             competitionForm.appendChild(phone)
-            competitionForm.appendChild(date)
+            competitionForm.appendChild(dateStart)
+            competitionForm.appendChild(dateEnd)
+
+}
+
+function payInfo(){
+    const payBlock = document.createElement("div")
+
+    payBlock.classList.add("formContent")
+    const date = document.createElement("input")
+    const price = document.createElement("input")
+
+    payBlock.style.marginTop = "20px";
+    date.classList.add("visual")
+    price.classList.add("visual")
+
+    date.type = "date";
+    price.placeholder = "Summa EUR";
+
+        form.appendChild(payBlock)
+        payBlock.appendChild(date)
+        payBlock.appendChild(price)
+
 }
 
 function category(isFirstRender){
 // Sex
-if(isFirstRender === false){
-    return 
-}
 competitionCategory.classList.add("formContent");
+if(isFirstRender === false){
+    competitionCategory.innerHTML = "";
+}
+
 
 sex()
 
@@ -156,7 +182,7 @@ if (window.innerWidth <= 375) {
 
 const newCategoryBlock = document.createElement("div");
 
-function newCategory(){
+function newCategory() {
     const blockPlus = document.createElement("img");
     blockPlus.src = "assets/img/icon/plus-square.svg";
     blockPlus.classList.add("visual");
@@ -164,10 +190,7 @@ function newCategory(){
     blockPlus.style.width = "30px";
 
     blockPlus.addEventListener("click", () => {
-        // Очищаем блок перед добавлением новых элементов
-        while (newCategoryBlock.firstChild) {
-            newCategoryBlock.removeChild(newCategoryBlock.firstChild);
-        }
+
         const clonedCategory = competitionCategory.cloneNode(true);
         const newDisciplineBtn = clonedCategory.querySelector(".disciplin-block-open-btn")
         newDisciplineBtn.addEventListener("click", (event)=>{
@@ -204,4 +227,4 @@ form.appendChild(plusContainer);
 }
 
 
-export {competitionPost, category, personYear, personDisciplin, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
+export {competitionPost, category, payInfo, personYear, personDisciplin, competitionCategory, btnDisciplin, btnYear, personWeight, btnWeight}
