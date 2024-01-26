@@ -1,0 +1,16 @@
+main {
+  display: flex !important;
+  justify-content: center; }
+
+.noteikumiBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.noteikumiPdf {
+  color: black;
+  margin: 5px;
+  width: 180px !important;
+  height: 60px !important; }
+
+/*# sourceMappingURL=doc.css.map */

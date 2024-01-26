@@ -1,0 +1,21 @@
+@mixin displayCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex!important;
+    justify-content: center;
+}
+
+.noteikumiBlock{
+    @include displayCenter()
+}
+
+.noteikumiPdf{
+    color: black;
+    margin: 5px;
+    width: 180px!important;
+    height: 60px!important;
+}
