@@ -78,12 +78,14 @@
                                                 </li>
                                                 <li id="liDoc" class="li-header-item"><a class="li-header-link" href="">Dokumenti</a>
                                                     <ul class="submenu">
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Gada pārskati</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Kopsapulces protokoli</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Valdes sēdes protokoli</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Budžets</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Sacensību rezultāti</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Reitings</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=0" data-index="0">Noteikumi</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=1" data-index="1">Dopings</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=2" data-index="2">Gada pārskati</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=3" data-index="3">Kopsapulces protokoli</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=4" data-index="4">Valdes sēdes protokoli</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=5" data-index="5">Budžets</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=6" data-index="6">Sacensību rezultāti</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=7" data-index="7">Reitings</a></li>
                                                     </ul>
                                                 <li class="li-header-item"><a class="li-header-link" href="">Biedri</a></li>
                                                 <li class="li-header-item"><a class="li-header-link" href="rules.html">Noteikumi</a></li>
@@ -135,8 +137,9 @@
         <!-- Header End -->
     </header>
     <main>
-        <!-- noteikumi -->
-        <div id="noteikumi">
+        <div id="contentBlock">
+            <!-- noteikumi -->
+        <div class="content" id="noteikumi">
             <div class="noteikumiBlock">
                 <button class="noteikumiPdf">Full contact noteikumi</button>
                 <button class="noteikumiPdf">K-1 noteikumi</button>
@@ -146,8 +149,9 @@
             </div>
         </div>
         <!-- dopings -->
-        <div id="dopings">
-
+        <div class="content" id="dopings">
+            sdfsdfsd
+        </div>
         </div>
     </main>
     <footer>
@@ -291,5 +295,6 @@
  
          <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.158/pdf.min.js"></script>
          <script src="assets/js/doc.js"></script>
+         <script src="assets/js/vendor/docOpenBlock.js"></script>
      </body>
  </html>

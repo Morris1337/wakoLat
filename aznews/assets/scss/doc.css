@@ -2,6 +2,11 @@ main {
   display: flex !important;
   justify-content: center; }
 
+#noteikumi {
+  display: none; }
+  #noteikumi.open {
+    display: block; }
+
 .noteikumiBlock {
   display: flex;
   justify-content: center;
@@ -12,5 +17,10 @@ main {
   margin: 5px;
   width: 180px !important;
   height: 60px !important; }
+
+#dopings {
+  display: none; }
+  #dopings.open {
+    display: block; }
 
 /*# sourceMappingURL=doc.css.map */

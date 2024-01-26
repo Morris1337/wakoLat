@@ -9,6 +9,13 @@ main{
     justify-content: center;
 }
 
+#noteikumi{
+    display: none;
+    &.open{
+        display: block;
+    }
+}
+
 .noteikumiBlock{
     @include displayCenter()
 }
@@ -18,4 +25,11 @@ main{
     margin: 5px;
     width: 180px!important;
     height: 60px!important;
+}
+
+#dopings{
+    display: none;
+    &.open{
+        display: block;
+    }
 }
