@@ -4,23 +4,35 @@
     align-items: center;
 }
 
+.column{
+    @include displayCenter();
+    flex-direction: column;
+}
 main{
     display: flex!important;
     justify-content: center;
 }
 
+.content{
+    @include displayCenter();
+    flex-direction: column;
+    width: 800px;
+    text-align: justify;
+}
+
 #noteikumi{
     display: none;
     &.open{
-        display: block;
+        display: flex;
     }
 }
 
 .noteikumiBlock{
-    @include displayCenter()
+    @include displayCenter();
 }
 
 .noteikumiPdf{
+    @include displayCenter();
     color: black;
     margin: 5px;
     width: 180px!important;
@@ -30,6 +42,6 @@ main{
 #dopings{
     display: none;
     &.open{
-        display: block;
+        display: flex;
     }
 }

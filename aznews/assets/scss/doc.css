@@ -1,11 +1,25 @@
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
 main {
   display: flex !important;
   justify-content: center; }
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 800px;
+  text-align: justify; }
+
 #noteikumi {
   display: none; }
   #noteikumi.open {
-    display: block; }
+    display: flex; }
 
 .noteikumiBlock {
   display: flex;
@@ -13,6 +27,9 @@ main {
   align-items: center; }
 
 .noteikumiPdf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: black;
   margin: 5px;
   width: 180px !important;
@@ -21,6 +38,6 @@ main {
 #dopings {
   display: none; }
   #dopings.open {
-    display: block; }
+    display: flex; }
 
 /*# sourceMappingURL=doc.css.map */
