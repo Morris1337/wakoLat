@@ -11,6 +11,42 @@
 main{
     display: flex!important;
     justify-content: center;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+.container-category{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li{
+        cursor: pointer;
+        // margin-left: 5px;
+        // padding: 10px;
+        font-size: 11px;
+        a{
+            background-color: #8080800f;
+            width: 120px;
+            height: 50px;
+            padding: 10px!important;
+            margin: 0!important;
+            display: flex!important;
+            align-items: center!important;
+            border: 2 solid black;
+            // border-radius: 10px;
+            &:hover{
+                background-color: black;
+                color: white!important;
+            }
+            &.active{
+                background-color: black;
+                color: white!important;
+            }
+        }
+        .first{
+            border: 0;
+        }
+    }
 }
 
 .content{
@@ -18,6 +54,15 @@ main{
     flex-direction: column;
     width: 800px;
     text-align: justify;
+    button{
+        border: 0;
+        color: black;
+        cursor: pointer;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }
 }
 
 #noteikumi{

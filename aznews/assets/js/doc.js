@@ -19,11 +19,18 @@ document.addEventListener("DOMContentLoaded", function() {
         })
     })
 
+    // let isOpenCategory = true;
     liBlockList.forEach((elem) => {
         elem.addEventListener("click", (event) => {
             const dataIndex = elem.getAttribute("data-index");
             blockVisible(dataIndex);
             event.preventDefault();
+            // isOpenCategory = !isOpenCategory;
+            // if(!isOpenCategory){
+            //     elem.classList.add("active")
+            // }else{
+            //     elem.classList.remove("active")
+            // }
         })
     })
 
