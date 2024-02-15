@@ -37,11 +37,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function wakoNoteikumi(){
         const pdfFiles = [
-            "files/noteikumi/Full_contact_noteikumi.pdf",
-            "files/noteikumi/K_1_noteikumi.pdf",
-            "files/noteikumi/Kick_light_noteikumi.pdf",
-            "files/noteikumi/WAKO_kikboksa_noteikumi.pdf",
-            "files/noteikumi/WAKO_Rules_25_10_2022.pdf"
+            "files/noteikumi/Full_contact_noteikumi_compressed.pdf",
+            "files/noteikumi/K_1_noteikumi_compressed.pdf",
+            "files/noteikumi/Kick_light_noteikumi_compressed.pdf",
+            "files/noteikumi/WAKO_kikboksa_noteikumi_compressed.pdf",
+            "files/noteikumi/WAKO_Rules_25_10_2022_compressed.pdf"
         ]
         noteikumiPdf.forEach((file, index)=>{
             file.addEventListener("click", ()=>{

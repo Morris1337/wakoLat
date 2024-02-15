@@ -1,0 +1,46 @@
+footer {
+  background: linear-gradient(to bottom, white, black); }
+  footer p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 5px; }
+
+.footer-contact {
+  width: 485px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  flex-direction: column; }
+  .footer-contact b {
+    color: white; }
+  .footer-contact h6, .footer-contact p {
+    color: white;
+    padding: 0;
+    margin: 5px; }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.footer-logo {
+  margin: 20px;
+  width: 300px;
+  z-index: 2;
+  position: relative;
+  overflow: hidden; }
+  .footer-logo img {
+    width: 300px; }
+  .footer-logo .wako {
+    width: 150px; }
+  .footer-logo .LKF {
+    width: 200px; }
+  .footer-logo .lsfp {
+    width: 200px; }
+  .footer-logo .iM {
+    width: 200px; }
+
+/*# sourceMappingURL=footer.css.map */

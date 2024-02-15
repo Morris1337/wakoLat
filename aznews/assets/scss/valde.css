@@ -1,6 +1,72 @@
-.valdeimg {
-  width: 300px;
-  height: 300px;
-  clip: rect(0, 50px, 50px, 100px); }
+h1, h2, h3, h4, h5, h6, p, hr {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+hr {
+  border: solid 1px;
+  margin: 5px; }
+
+main {
+  padding: 20px; }
+
+.status {
+  font-size: 16px; }
+
+.valde-president {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .valde-president .valde {
+    width: 194px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; }
+    .valde-president .valde img {
+      width: 200px;
+      height: 190px;
+      object-fit: cover; }
+
+.valde-other {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .valde-other .valde {
+    margin: 20px;
+    width: 194px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; }
+    .valde-other .valde img {
+      width: 200px;
+      height: 190px;
+      object-fit: cover; }
+    .valde-other .valde h4 {
+      font-size: 20px !important; }
+
+.tiesniesi-all {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 600px);
+  justify-items: center;
+  justify-content: center; }
+  .tiesniesi-all .tiesniesi {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    margin: 20px;
+    width: 400px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; }
+    .tiesniesi-all .tiesniesi img {
+      width: 200px;
+      height: 190px;
+      object-fit: cover; }
+    .tiesniesi-all .tiesniesi h4 {
+      font-size: 20px !important; }
 
 /*# sourceMappingURL=valde.css.map */

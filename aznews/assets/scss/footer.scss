@@ -1,0 +1,56 @@
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    background: linear-gradient(to bottom, white, black);
+    p{
+        @include flexCenter();
+        padding: 0;
+        margin: 5px;
+    }
+}
+
+.footer-contact{
+    width: 485px;
+    @include flexCenter();
+    align-items: flex-start;
+    flex-direction: column;
+    b{
+        color: white; 
+    }
+    h6, p{
+        color: white;
+        padding: 0;
+        margin: 5px;
+    }
+}
+
+.flex-center{
+    @include flexCenter();
+}
+
+.footer-logo{
+    margin: 20px;
+    width: 300px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden;
+    img{
+        width: 300px;
+    }
+    .wako{
+        width: 150px;
+    }
+    .LKF{
+        width: 200px;
+    }
+    .lsfp{
+        width: 200px;
+    }
+    .iM{
+        width: 200px;
+    }
+}

@@ -27,6 +27,7 @@
             <link rel="stylesheet" href="assets/css/style.css">
             <link rel="stylesheet" href="assets/css/slideshow.css?<?=filemtime('assets/css/slideshow.css')?>">
             <link rel="stylesheet" href="assets/css/calendar.css">
+            <link rel="stylesheet" href="assets/scss/footer.css">
         </head>
 
    <body>
@@ -69,10 +70,10 @@
                        </div>
                    </div>
                 </div>
-               <div class="header-bottom header-sticky">
+                <div class="header-bottom header-sticky">
                     <div class="container phone-header">
                         <div>
-                            <img class="LKF-logo" src="assets/img/icon/federacija/LKFLOGO.jpeg" alt="">
+                            <img style="margin-top: 10px;" class="LKF-logo" src="assets/img/logo/federacija/Color-logo@2x-100.jpg" alt="">
                         </div>
                         <div class="row go1 align-items-center">
                             <div class="col-xl-10 col-lg-10 col-md-12 header-flex">
@@ -90,18 +91,19 @@
                                                 </li>
                                                 <li id="liDoc" class="li-header-item"><a class="li-header-link" href="">Dokumenti</a>
                                                     <ul class="submenu">
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Gada pārskati</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Kopsapulces protokoli</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Valdes sēdes protokoli</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Budžets</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Sacensību rezultāti</a></li>
-                                                        <li class="li-header-item"><a class="li-header-link" href="">Reitings</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=0" data-index="0">Noteikumi</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=1" data-index="1">Dopings</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=2" data-index="2">Gada pārskati</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=3" data-index="3">Kopsapulces protokoli</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=4" data-index="4">Valdes sēdes protokoli</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=5" data-index="5">Budžets</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=6" data-index="6">Sacensību rezultāti</a></li>
+                                                        <li class="li-header-item"><a class="li-header-link" href="doc.html?data-index=7" data-index="7">Reitings</a></li>                                                    
                                                     </ul>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Biedri</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Noteikumi</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Valde</a></li>
+                                                    <li class="li-header-item"><a class="li-header-link" href="biedri.html">Biedri</a></li>
+                                                    <li class="li-header-item"><a class="li-header-link" href="valde.html">Valde</a></li>
                                                 <li class="li-header-item"><a class="li-header-link" href="">LKF izlase</a></li>
-                                                <li class="li-header-item"><a class="li-header-link" href="">Tiesneši</a></li>
+                                                <li class="li-header-item"><a class="li-header-link" href="tiesniesi.html">Tiesneši</a></li>
                                                 <li id="komis" class="li-header-item"><a class="li-header-link" href="">Komisijas</a>
                                                     <ul class="ul-header-komis submenu">
                                                         <li class="li-header-item"><a class="li-header-link" href="">Tiesnešu komisija</a></li>
@@ -112,9 +114,7 @@
                                             </li>
                                             <li><a href="calendar.html">kalendārs</a></li>
                                             <li><a href="about.html">Eksaminācija</a></li>
-                                            <li><a href="latest_news.html">Noteikumi</a></li>
-                                            <li><a href="contact.html">Antidopings</a></li>
-                                            <li><a href="#">Kontakti</a></li>
+                                            <li><a href="contact.html">Kontakti</a></li>
                                         </ul>
                                         <a href="#" aria-haspopup="true" role="button" tabindex="0" class="slicknav_btn slicknav_open" style="outline: none;">
                                         </a>                                    
@@ -185,96 +185,41 @@
     
     <footer>
         <!-- Footer Start-->
-        <div class="footer-area footer-padding fix">
-             <div class="container">
-                 <div class="row d-flex justify-content-between">
-                     <div class="col-xl-5 col-lg-5 col-md-7 col-sm-12">
-                         <div class="single-footer-caption">
-                             <div class="single-footer-caption">
-                                 <!-- logo -->
-                                 <div class="footer-logo">
-                                     <a href="index.html"><img src="assets/img/icon/federacija/LKFLOGO.jpeg" alt=""></a>
-                                 </div>
-                                 <!-- social -->
-                                 <div style="display: flex">
-                                     <h5 style="color: white;">Fallow us</h5>
-                                     <div style="margin-left: 10px;" class="footer-social">
-                                         <a href="#"><i class="fab fa-twitter"></i></a>
-                                         <a href="#"><i class="fab fa-instagram"></i></a>
-                                         <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
+        <div>
+             <div>
+                 <p>Tehniskais sponsors</p>
+                 <div class="flex-center">
+                     <div class="footer-logo">
+                         <img src="assets/img/logo/equip/TopTen_Logo_Wht.png" alt="">
                      </div>
-                     <div class="col-xl-3 col-lg-3 col-md-4  col-sm-6">
-                         <div class="single-footer-caption mt-60">
-                             <div class="footer-tittle">
-                                 <h4>Newsletter</h4>
-                                 <p>Heaven fruitful doesn't over les idays appear creeping</p>
-                                 <!-- Form -->
-                                 <div class="footer-form" >
-                                     <div id="mc_embed_signup">
-                                         <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                                         method="get" class="subscribe_form relative mail_part">
-                                             <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                             class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                             onblur="this.placeholder = ' Email Address '">
-                                             <div class="form-icon">
-                                             <button type="submit" name="submit" id="newsletter-submit"
-                                             class="email_icon newsletter-submit button-contactForm"><img src="assets/img/logo/form-iocn.png" alt=""></button>
-                                             </div>
-                                             <div class="mt-10 info"></div>
-                                         </form>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
-                         <div class="single-footer-caption mb-50 mt-60">
-                             <div class="footer-tittle">
-                                 <h4>Instagram Feed</h4>
-                             </div>
-                             <div class="instagram-gellay">
-                                 <ul class="insta-feed">
-                                     <li><a href="#"><img src="assets/img/post/instra1.jpg" alt=""></a></li>
-                                     <li><a href="#"><img src="assets/img/post/instra2.jpg" alt=""></a></li>
-                                     <li><a href="#"><img src="assets/img/post/instra3.jpg" alt=""></a></li>
-                                     <li><a href="#"><img src="assets/img/post/instra4.jpg" alt=""></a></li>
-                                     <li><a href="#"><img src="assets/img/post/instra5.jpg" alt=""></a></li>
-                                     <li><a href="#"><img src="assets/img/post/instra6.jpg" alt=""></a></li>
-                                 </ul>
-                             </div>
-                         </div>
+                     <div class="footer-logo">
+                         <img src="assets/img/logo/equip/Adidas_Logo.svg" alt="">
                      </div>
                  </div>
+                 <!-- <p>Sponsori</p> -->
+                 <div>
+ 
+                 </div>
              </div>
-         </div>
-        <!-- footer-bottom aera -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="footer-border">
-                     <div class="row d-flex align-items-center justify-content-between">
-                         <div class="col-lg-6">
-                             <div class="footer-copy-right">
-                                 <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                             </div>
-                         </div>
-                         <div class="col-lg-6">
-                             <div class="footer-menu f-right">
-                                 <ul>                             
-                                     <li><a href="#">Terms of use</a></li>
-                                     <li><a href="#">Privacy Policy</a></li>
-                                     <li><a href="#">Contact</a></li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
-                </div>
-            </div>
+             <div class="flex-center">
+                 <div class="footer-logo">
+                     <img class="LKF" src="assets/img/logo/federacija/Color-logo_2x-100-removebg-preview.png" alt="">
+                 </div>
+                 <div class="footer-contact">
+                     <h6>Latvijas Kikboksa Federācija</h6>
+                     <p><b>Adrese: </b> Žagatu iela 20-80, Rīga, Latvija, LV-1084.</p>
+                     <p><b>Telefons: </b> +371 26226838</p>
+                     <p><b>E-pasts: </b> info@wakolat.lv</p>
+                 </div>
+                 <div class="footer-logo">
+                     <img class="wako" src="assets/img/logo/federacija/Wako_page-0001-removebg-preview.png" alt="">
+                 </div>
+                 <div class="footer-logo">
+                     <img class="iM" src="assets/img/logo/federacija/noklusejuma-logotips-augseja-kreisaja-puse.png" alt="">
+                     <img class="lsfp" src="assets/img/logo/federacija/LSFP_logo-removebg-preview.png" alt="">
+                     
+                 </div>
+             </div>
         </div>
         <!-- Footer End-->
     </footer>

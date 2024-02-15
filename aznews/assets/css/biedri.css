@@ -19,7 +19,7 @@ p{
 main{
     /* background-image: url("../img/background/wall/stone-wall.jpg"); */
 
-    background-color: rgba(250, 235, 215, 0.455);
+    background-color: rgb(255, 255, 255);
     background-size: cover;
     /* opacity: 0.5; */
     margin: 0;
