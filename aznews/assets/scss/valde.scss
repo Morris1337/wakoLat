@@ -87,3 +87,29 @@ main{
         }
     }
 }
+
+.izslase-all{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 200px);
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+    .izslase{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        width: 200px;
+        z-index: 2;
+        position: relative;
+        overflow: hidden;
+        img{
+            width: 200px;
+            height: 190px;
+            object-fit: cover;
+        }
+        h4{
+            font-size: 20px!important;
+        }
+    }
+}

@@ -69,4 +69,26 @@ main {
     .tiesniesi-all .tiesniesi h4 {
       font-size: 20px !important; }
 
+.izslase-all {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  gap: 20px;
+  justify-items: center;
+  justify-content: center; }
+  .izslase-all .izslase {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 200px;
+    z-index: 2;
+    position: relative;
+    overflow: hidden; }
+    .izslase-all .izslase img {
+      width: 200px;
+      height: 190px;
+      object-fit: cover; }
+    .izslase-all .izslase h4 {
+      font-size: 20px !important; }
+
 /*# sourceMappingURL=valde.css.map */
